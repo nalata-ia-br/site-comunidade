@@ -4,6 +4,7 @@ Landing page da comunidade brasileira de IA open source e on-premise. Construíd
 
 Os textos retomam a apresentação, os princípios e o convite da [página original](https://nalata.ia.br/), preservando o foco em ferramentas abertas, infraestrutura própria e troca técnica. A seção “Do datacenter para grandes ideias” transforma a referência visual original em uma cena de servidor com doze marcas reais que se expandem conforme o scroll.
 
+
 ## Executar localmente
 
 Use Node.js **22.22.0**, definido em `.nvmrc`:
@@ -14,20 +15,6 @@ nvm use
 npm install
 npm run dev
 ```
-
-Abra `http://localhost:4322` (ou a porta informada pelo terminal, caso esteja ocupada). Não são necessárias variáveis de ambiente, credenciais ou integrações com backend.
-
-## Compartilhar pelo túnel Cloudflare
-
-Com `npm run dev` rodando na porta **4322**, abra outro terminal e execute:
-
-```sh
-npm run tunnel
-```
-
-O site fica disponível em **https://nalata.ia.br** enquanto o servidor e o túnel estiverem rodando. Use `Ctrl+C` para encerrar o túnel iniciado nesse terminal.
-
-O comando usa o túnel existente `nalata-demo` e requer o `cloudflared` instalado e a credencial local em `~/.cloudflared/6fffe4a3-7ea1-4d47-8076-280a4ba4fabf.json`, já configurados neste computador.
 
 ## Validar e gerar a versão de produção
 
