@@ -2,6 +2,7 @@
 
 Landing page da comunidade brasileira de IA open source e on-premise. Construída com Astro, TypeScript e Motion, com HTML estático, fontes locais, navegação responsiva e animações que respeitam a preferência por movimento reduzido.
 
+
 Os textos retomam a apresentação, os princípios e o convite da [página original](https://nalata.ia.br/), preservando o foco em ferramentas abertas, infraestrutura própria e troca técnica. A seção “Do datacenter para grandes ideias” transforma a referência visual original em uma cena de servidor com doze marcas reais que se expandem conforme o scroll.
 
 
