@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Nalata — monograma N em metal dobrado</title>
+  <path d="M7 15 18 8v30L7 45V15Z" fill="#46C8FF"/>
+  <path d="m38 18 11-7v30l-11 7V18Z" fill="#7E64FF"/>
+  <path d="m7 15 11-7 31 33-11 7L7 15Z" fill="#A8DFFF"/>
+  <path d="m18 8 31 33-11 7" stroke="#E1F6FF" stroke-opacity=".7" stroke-width=".7"/>
+  <path d="m7 15 31 33v-9L7 15Z" fill="#2E97FF"/>
+  <path d="m27 8 7-4 7 4-7 4-7-4Z" fill="#46C8FF" opacity=".5"/>
+  <path d="m17 49 5-3 5 3-5 3-5-3Z" fill="#7E64FF" opacity=".65"/>
+</svg>

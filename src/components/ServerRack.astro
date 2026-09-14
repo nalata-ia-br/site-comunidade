@@ -1,0 +1,636 @@
+---
+import Logo from './Logo.astro';
+
+const modules = ['network', 'compute', 'storage', 'compute', 'power'];
+---
+
+<div
+  class="rack-illustration"
+  data-server-rack
+  role="img"
+  aria-label="Ilustração frontal em duas dimensões de um servidor da IA na lata, com módulos de computação, armazenamento e indicadores de conexão."
+>
+  <div class="rack-cabinet" aria-hidden="true">
+    <div class="cabinet-front" data-rack-face>
+      <header class="rack-header">
+        <span class="rack-monogram">
+          <Logo size={34} />
+        </span>
+        <span class="rack-wordmark">
+          IA na lata<span>.</span>
+          <small>LOCAL COMPUTE</small>
+        </span>
+        <span class="rack-power-button">
+          <i></i>
+        </span>
+      </header>
+      <div class="rack-bay">
+        <div class="mounting-rail rail-left">
+          {Array.from({ length: 10 }, () => (
+            <i></i>
+          ))}
+        </div>
+        <div class="rack-modules">
+          {modules.map((kind, index) => (
+            <div
+              class={`server-module module-${kind}`}
+              style={`--module-order: ${index}`}
+            >
+              <span class="module-ear ear-left">
+                <i></i>
+                <i></i>
+              </span>
+              <div class="module-hardware">
+                {kind === 'network' ? (
+                  <div class="network-panel">
+                    <span class="module-label">NETWORK</span>
+                    <div class="network-ports">
+                      {Array.from({ length: 12 }, (_, port) => (
+                        <span class="network-port" style={`--port: ${port}`}>
+                          <i></i>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : kind === 'compute' ? (
+                  <>
+                    <div class="compute-fans">
+                      {[0, 1].map((fan) => (
+                        <span class="fan-housing">
+                          <span class="fan-rotor" style={`--fan: ${fan}`}>
+                            <i></i>
+                          </span>
+                        </span>
+                      ))}
+                    </div>
+                    <div class="compute-grille">
+                      <span></span>
+                    </div>
+                  </>
+                ) : kind === 'storage' ? (
+                  <div class="storage-drives">
+                    {[0, 1, 2, 3].map((drive) => (
+                      <span class="drive-tray">
+                        <i class="drive-handle"></i>
+                        <i class="drive-led" style={`--drive: ${drive}`}></i>
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <div class="power-supplies">
+                    {[0, 1].map(() => (
+                      <span class="power-supply">
+                        <i class="supply-socket"></i>
+                        <i class="supply-grille"></i>
+                        <i class="supply-led"></i>
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <div class="module-status">
+                  <span class="module-id">0{index + 1}</span>
+                  <i class="status-led led-cyan"></i>
+                  <i class="status-led led-green"></i>
+                </div>
+              </div>
+              <span class="module-ear ear-right">
+                <i></i>
+                <i></i>
+              </span>
+            </div>
+          ))}
+        </div>
+        <div class="mounting-rail rail-right">
+          {Array.from({ length: 10 }, () => (
+            <i></i>
+          ))}
+        </div>
+      </div>
+      <div class="rack-plinth">
+        <span class="plinth-vent"></span>
+        <span class="plinth-indicator">
+          <i></i>
+        </span>
+        <span class="plinth-vent"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .rack-illustration {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    container-type: size;
+    isolation: isolate;
+    pointer-events: none;
+  }
+  .rack-cabinet {
+    position: absolute;
+    width: 80%;
+    height: 82%;
+    left: 10%;
+    bottom: 8%;
+  }
+  .cabinet-front {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #416987;
+    border-radius: 12px;
+    background: #0c1b2d;
+    box-shadow: 0 0 26px #46c8ff0a;
+  }
+  .rack-header {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    height: 15%;
+    flex-shrink: 0;
+    padding: 0 8%;
+    border-bottom: 1px solid #2c455e;
+    background: #14283e;
+  }
+  .rack-monogram {
+    display: grid;
+    place-items: center;
+    width: 16%;
+    flex-shrink: 0;
+  }
+  .rack-monogram :global(svg) {
+    width: 100%;
+    height: auto;
+    filter: none;
+  }
+  .rack-wordmark {
+    display: block;
+    color: #d3e5f9;
+    font-family: var(--font-sans, 'Inter Variable', sans-serif);
+    font-size: clamp(7px, 4cqw, 12px);
+    font-weight: 550;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+  .rack-wordmark > span {
+    color: #6bcfff;
+  }
+  .rack-wordmark > small {
+    display: block;
+    margin-top: 4px;
+    font: 400 clamp(3px, 1.2cqw, 4px) / 1 var(--font-mono, monospace);
+    letter-spacing: clamp(0.5px, 0.26cqw, 0.8px);
+    color: #829fbc;
+  }
+  .rack-power-button {
+    display: grid;
+    place-items: center;
+    width: 7%;
+    aspect-ratio: 1;
+    margin-left: auto;
+    border: 1px solid #385872;
+    border-radius: 50%;
+    background: #0c1c30;
+  }
+  .rack-power-button > i {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #7ed9fc;
+    box-shadow: 0 0 5px #46c8ff66;
+    animation: rack-status-breathe 5s ease-in-out infinite;
+  }
+  .rack-bay {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    gap: 3.5%;
+    padding: 5% 4%;
+    background: #0a1728;
+  }
+  .mounting-rail {
+    width: 3%;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-block: 2%;
+    border-inline: 1px solid #223a50;
+    background: #101f32;
+  }
+  .mounting-rail > i {
+    width: 55%;
+    height: 1.2%;
+    min-height: 2px;
+    background: #486780;
+  }
+  .rack-modules {
+    display: grid;
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    gap: 3%;
+    flex: 1;
+    min-width: 0;
+  }
+  .server-module {
+    display: flex;
+    min-height: 0;
+    position: relative;
+    border: 1px solid #2e4b66;
+    border-radius: 5px;
+    background: #142a40;
+  }
+  .module-ear {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 6%;
+    flex-shrink: 0;
+    padding-block: 9%;
+    background: #142a40;
+  }
+  .ear-left {
+    border-right: 1px solid #253f57;
+  }
+  .ear-right {
+    border-left: 1px solid #253f57;
+  }
+  .module-ear > i {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #7e93a6;
+  }
+  .module-hardware {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    flex: 1;
+    min-width: 0;
+    padding: 5% 4%;
+  }
+  .module-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 3px;
+    width: 11%;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+  .module-id {
+    width: 100%;
+    color: #7d9bb6;
+    font: clamp(3px, 1.2cqw, 4px) / 1.2 var(--font-mono, monospace);
+    letter-spacing: 0.4px;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+  .status-led {
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    animation: rack-status-breathe 3.7s ease-in-out infinite;
+    animation-delay: calc(var(--module-order) * -0.47s);
+  }
+  .led-cyan {
+    background: #87dfff;
+    box-shadow: 0 0 5px #46c8ff88;
+  }
+  .led-green {
+    background: #65dcae;
+    box-shadow: 0 0 4px #39e6a866;
+    animation-duration: 5.1s;
+    animation-delay: calc(var(--module-order) * -0.7s - 1.2s);
+  }
+  .network-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+  }
+  .module-label {
+    display: block;
+    font: clamp(3px, 1.1cqw, 4px) / 1 var(--font-mono, monospace);
+    letter-spacing: 0.8px;
+    color: #88a4be;
+    margin-bottom: 3px;
+  }
+  .network-ports {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 3px 4%;
+    flex: 1;
+    min-height: 0;
+  }
+  .network-port {
+    position: relative;
+    min-height: 0;
+    background: #030d18;
+    border: 1px solid #3a5d79;
+    border-radius: 2px;
+  }
+  .network-port::before {
+    content: '';
+    position: absolute;
+    left: 28%;
+    right: 28%;
+    bottom: -1px;
+    height: 2px;
+    background: #13283b;
+  }
+  .network-port > i {
+    position: absolute;
+    left: 1px;
+    top: -2px;
+    width: 2px;
+    height: 1px;
+    background: #61caaa;
+    animation: rack-port-activity 4.6s ease-in-out infinite;
+    animation-delay: calc(var(--port) * -0.41s);
+  }
+  .network-port:nth-child(3n) > i {
+    background: #74d4f9;
+  }
+  .compute-fans {
+    display: flex;
+    gap: 9%;
+    width: 45%;
+    flex-shrink: 0;
+  }
+  .fan-housing {
+    display: grid;
+    place-items: center;
+    width: 46%;
+    aspect-ratio: 1;
+    border: 1px solid #4c728e;
+    border-radius: 50%;
+    background: #0a1a28;
+  }
+  .fan-rotor {
+    display: grid;
+    place-items: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+      from 20deg,
+      #79abc5 0deg 27deg,
+      #0a1a28 31deg 60deg
+    );
+    animation: rack-fan-turn 13s linear infinite;
+    animation-delay: calc(var(--module-order) * -1.7s + var(--fan) * -0.8s);
+  }
+  .fan-rotor > i {
+    width: 34%;
+    height: 34%;
+    border: 1px solid #617e94;
+    border-radius: 50%;
+    background: #1f384d;
+  }
+  .compute-grille {
+    position: relative;
+    flex: 1;
+    height: 72%;
+    overflow: hidden;
+    border: 1px solid #2e4b66;
+    border-radius: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      #071725 0 2px,
+      #294159 2px 4px
+    );
+  }
+  .compute-grille > span {
+    position: absolute;
+    left: -22%;
+    top: 0;
+    height: 100%;
+    width: 18%;
+    background: linear-gradient(90deg, #69bcf000, #69bcf026, #69bcf000);
+    animation: rack-data-pass 7s ease-in-out infinite;
+    animation-delay: calc(var(--module-order) * -1.4s);
+  }
+  .storage-drives {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+    flex: 1;
+    height: 100%;
+  }
+  .drive-tray {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-inline: 9%;
+    min-height: 0;
+    border: 1px solid #365571;
+    border-radius: 2px;
+    background: #1a324a;
+  }
+  .drive-handle {
+    width: 64%;
+    height: 25%;
+    min-height: 1px;
+    background: #071725;
+  }
+  .drive-led {
+    width: 2px;
+    height: 2px;
+    margin-left: auto;
+    background: #75c7dd;
+    border-radius: 1px;
+    animation: rack-status-breathe 4.2s ease-in-out infinite;
+    animation-delay: calc(var(--module-order) * -0.8s + var(--drive) * -0.6s);
+  }
+  .power-supplies {
+    display: flex;
+    gap: 5%;
+    flex: 1;
+    height: 78%;
+  }
+  .power-supply {
+    display: flex;
+    align-items: center;
+    gap: 9%;
+    width: 50%;
+    padding: 6%;
+    border: 1px solid #365571;
+    border-radius: 2px;
+    background: #172c41;
+  }
+  .supply-socket {
+    width: 32%;
+    height: 60%;
+    background: #061321;
+    border: 1px solid #566c7e;
+    border-radius: 2px 2px 1px 1px;
+  }
+  .supply-grille {
+    flex: 1;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, #061321 0 1px, #243d52 1px 3px);
+  }
+  .supply-led {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #67ceac;
+  }
+  .rack-plinth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11%;
+    height: 7%;
+    flex-shrink: 0;
+    padding-inline: 12%;
+    border-top: 1px solid #2c455e;
+    background: #14283e;
+  }
+  .plinth-vent {
+    height: 18%;
+    width: 30%;
+    border-bottom: 1px solid #2c4861;
+    background: repeating-linear-gradient(
+      90deg,
+      #071523 0 2px,
+      #203a51 2px 4px
+    );
+  }
+  .plinth-indicator {
+    width: 14%;
+    height: 2px;
+    background: #062232;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .plinth-indicator > i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #63c3ed;
+    box-shadow: 0 0 5px #46c8ff55;
+    animation: rack-status-breathe 6s ease-in-out infinite;
+  }
+  @keyframes rack-status-breathe {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    45%,
+    65% {
+      opacity: 1;
+    }
+  }
+  @keyframes rack-port-activity {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    35%,
+    60% {
+      opacity: 0.95;
+    }
+  }
+  @keyframes rack-fan-turn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rack-data-pass {
+    0%,
+    20% {
+      transform: translateX(0);
+    }
+    80%,
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  :global([data-server-scene]:not(.is-in-view)) .rack-illustration * {
+    animation-play-state: paused;
+  }
+  :global(html[data-motion='paused']) .rack-illustration * {
+    animation: none !important;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rack-illustration * {
+      animation: none !important;
+    }
+  }
+  @container (max-width: 200px) {
+    .rack-cabinet {
+      height: 82%;
+      width: 80%;
+      left: 10%;
+    }
+    .rack-header {
+      padding-inline: 7%;
+      gap: 5%;
+    }
+    .rack-monogram {
+      width: 20%;
+    }
+    .rack-wordmark {
+      font-size: 6.5px;
+    }
+    .rack-wordmark > small {
+      font-size: 2.6px;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+    .rack-power-button {
+      width: 6%;
+    }
+    .rack-power-button > i {
+      width: 2px;
+      height: 2px;
+    }
+    .rack-modules {
+      gap: 2.4%;
+    }
+    .module-hardware {
+      padding-inline: 4%;
+      gap: 5%;
+    }
+    .module-status {
+      width: 11%;
+      gap: 2px;
+    }
+    .module-label {
+      font-size: 2.7px;
+      letter-spacing: 0.3px;
+    }
+    .network-ports {
+      gap: 3px 4%;
+    }
+    .compute-fans {
+      width: 46%;
+    }
+    .compute-grille {
+      background-size: 3px 100%;
+    }
+    .fan-housing {
+      box-shadow: inset 0 0 0 1px #142b3d;
+    }
+    .storage-drives {
+      grid-template-columns: 1fr;
+      gap: 3px;
+    }
+    .drive-tray:nth-child(n + 3) {
+      display: none;
+    }
+    .side-vent {
+      background-size: 100% 3px;
+    }
+  }
+</style>

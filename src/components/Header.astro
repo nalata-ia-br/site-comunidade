@@ -1,0 +1,228 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+---
+
+<a class="skip-link" href="#conteudo">
+  Pular para o conteúdo
+</a>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="nalata IA — início">
+      <Logo size={40} />
+      <span class="brand-wordmark">
+        nalata<span class="brand-ia">IA</span>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#sobre">A comunidade</a>
+      <a href="#pilares">Por que na lata?</a>
+      <a href="#stack">Nossa stack</a>
+    </nav>
+    <a class="nav-join" href="#participar">
+      Fazer parte <Icon name="arrow-up-right" size={16} />
+    </a>
+    <button
+      class="menu-toggle"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav
+    class="mobile-nav container"
+    id="mobile-nav"
+    aria-label="Navegação móvel"
+    hidden
+  >
+    <a href="#sobre">
+      A comunidade <Icon name="arrow-up-right" />
+    </a>
+    <a href="#pilares">
+      Por que na lata? <Icon name="arrow-up-right" />
+    </a>
+    <a href="#stack">
+      Nossa stack <Icon name="arrow-up-right" />
+    </a>
+    <a href="#participar">
+      Fazer parte <Icon name="arrow-up-right" />
+    </a>
+  </nav>
+  <div class="scroll-progress" aria-hidden="true"></div>
+</header>
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--line);
+    background: rgba(6, 12, 26, 0.8);
+    backdrop-filter: blur(20px);
+  }
+  .nav-inner {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 27px;
+    font-weight: 640;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+  }
+  .brand-wordmark {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1;
+  }
+  .brand-ia {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: #a3bde4;
+    letter-spacing: 0.6px;
+    margin: 2px 0 0 6px;
+    border: 1px solid #83a4d433;
+    border-radius: 3px;
+    padding: 3px 4px;
+    background: #17263e77;
+  }
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: auto;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .desktop-nav a {
+    position: relative;
+    transition: color 0.2s;
+  }
+  .desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s;
+  }
+  .desktop-nav a:hover::after {
+    transform: scaleX(1);
+  }
+  .desktop-nav a:hover {
+    color: var(--text);
+  }
+  .nav-join {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 17px;
+    border: 1px solid #31445f;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #19263a88, #0c152688);
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  .nav-join:hover {
+    border-color: var(--cyan);
+    background: #152a45;
+  }
+  .scroll-progress {
+    height: 1px;
+    background: linear-gradient(90deg, var(--violet), var(--cyan));
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    width: 42px;
+    height: 42px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.2s;
+  }
+  .menu-toggle[aria-expanded='true'] span:first-child {
+    transform: translateY(3px) rotate(45deg);
+  }
+  .menu-toggle[aria-expanded='true'] span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+  .mobile-nav {
+    padding-bottom: 18px;
+  }
+  .mobile-nav a {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .mobile-nav[hidden] {
+    display: none;
+  }
+  @media (max-width: 760px) {
+    .nav-inner {
+      height: 70px;
+      gap: 12px;
+    }
+    .desktop-nav {
+      display: none;
+    }
+    .nav-join {
+      margin-left: auto;
+      gap: 10px;
+      padding: 9px 12px;
+    }
+    .menu-toggle {
+      display: flex;
+    }
+    .brand {
+      font-size: 24px;
+      gap: 8px;
+    }
+    .brand :global(svg) {
+      width: 32px;
+      height: 32px;
+    }
+    .brand-ia {
+      font-size: 6px;
+      margin-left: 4px;
+      padding: 2px 3px;
+    }
+  }
+  @media (min-width: 761px) {
+    .mobile-nav {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,237 @@
+<div class="atmosphere" aria-hidden="true">
+  <div class="atmosphere-aurora aurora-cyan"></div>
+  <div class="atmosphere-aurora aurora-violet"></div>
+  <div class="atmosphere-ribbon ribbon-one"></div>
+  <div class="atmosphere-ribbon ribbon-two"></div>
+  <div class="atmosphere-grain"></div>
+  <canvas class="atmosphere-canvas"></canvas>
+  <div class="atmosphere-vignette"></div>
+</div>
+<button
+  class="motion-toggle"
+  type="button"
+  aria-label="Pausar animações"
+  aria-pressed="false"
+  hidden
+>
+  <svg
+    class="motion-pause-icon"
+    width="14"
+    height="14"
+    viewBox="0 0 16 16"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M5 3v10m6-10v10"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </svg>
+  <svg
+    class="motion-play-icon"
+    width="14"
+    height="14"
+    viewBox="0 0 16 16"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="m5 3 8 5-8 5V3Z"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linejoin="round"
+    />
+  </svg>
+  <span class="motion-tooltip">Pausar animações</span>
+</button>
+<script>
+  import '../scripts/atmosphere';
+</script>
+<style>
+  .atmosphere {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    isolation: isolate;
+    contain: strict;
+  }
+  .atmosphere-aurora {
+    position: absolute;
+    width: 100vw;
+    height: 105vh;
+    border-radius: 50%;
+    will-change: transform;
+    mix-blend-mode: screen;
+  }
+  .aurora-cyan {
+    left: -45vw;
+    top: -25vh;
+    background: radial-gradient(
+      ellipse,
+      #096b9d35,
+      #0c3a6920 42%,
+      transparent 69%
+    );
+    animation: aurora-drift 24s ease-in-out infinite alternate;
+  }
+  .aurora-violet {
+    right: -37vw;
+    top: 16vh;
+    background: radial-gradient(
+      ellipse,
+      #6242b536,
+      #303d8a1b 45%,
+      transparent 72%
+    );
+    animation: aurora-drift 30s -12s ease-in-out infinite alternate-reverse;
+  }
+  .atmosphere-ribbon {
+    position: absolute;
+    left: 25%;
+    top: -50%;
+    height: 180%;
+    width: 30%;
+    transform: rotate(-28deg);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #46c8ff08 33%,
+      #54abef16 49%,
+      #5fbbed08 64%,
+      transparent
+    );
+    filter: blur(20px);
+    animation: ribbon-drift 19s ease-in-out infinite alternate;
+  }
+  .ribbon-two {
+    left: 64%;
+    width: 18%;
+    background: linear-gradient(90deg, transparent, #8264ff16 50%, transparent);
+    animation-direction: alternate-reverse;
+    animation-delay: -9s;
+  }
+  .atmosphere-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+  .atmosphere-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+  .atmosphere-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 15%,
+      #060c1a30 90%
+    );
+  }
+  .motion-toggle {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 60;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #749ad343;
+    border-radius: 50%;
+    background: #0e1c30dd;
+    backdrop-filter: blur(10px);
+    color: #bed8fa;
+    box-shadow: 0 5px 20px #0003;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  .motion-toggle[hidden] {
+    display: none;
+  }
+  .motion-toggle:hover {
+    border-color: #77baffaa;
+    background: #1b3150;
+  }
+  .motion-play-icon {
+    display: none;
+  }
+  .motion-toggle[aria-pressed='true'] .motion-pause-icon {
+    display: none;
+  }
+  .motion-toggle[aria-pressed='true'] .motion-play-icon {
+    display: block;
+  }
+  .motion-tooltip {
+    pointer-events: none;
+    position: absolute;
+    right: calc(100% + 10px);
+    white-space: nowrap;
+    background: #122137ee;
+    border: 1px solid #6f92c638;
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 5px 9px;
+    opacity: 0;
+    transform: translateX(5px);
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+  }
+  .motion-toggle:is(:hover, :focus-visible) .motion-tooltip {
+    opacity: 1;
+    transform: none;
+  }
+  @keyframes aurora-drift {
+    0% {
+      transform: translate(-5%, -7%) scale(1);
+    }
+    50% {
+      transform: translate(15%, 10%) scale(1.1);
+    }
+    100% {
+      transform: translate(4%, 22%) scale(0.9);
+    }
+  }
+  @keyframes ribbon-drift {
+    from {
+      transform: rotate(-30deg) translateX(-10%);
+    }
+    to {
+      transform: rotate(-16deg) translateX(25%);
+    }
+  }
+  @media (max-width: 640px) {
+    .motion-toggle {
+      width: 35px;
+      height: 35px;
+      right: 13px;
+      bottom: 13px;
+    }
+    .atmosphere-aurora {
+      width: 160vw;
+    }
+    .aurora-cyan {
+      left: -95vw;
+    }
+    .aurora-violet {
+      right: -95vw;
+    }
+    .atmosphere-canvas {
+      opacity: 0.55;
+    }
+    .atmosphere-ribbon {
+      filter: blur(12px);
+    }
+  }
+</style>

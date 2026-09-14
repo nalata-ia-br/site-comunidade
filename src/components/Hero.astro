@@ -1,0 +1,1348 @@
+---
+import Icon from './Icon.astro';
+import Logo from './Logo.astro';
+import { WHATSAPP_URL } from '../data/site';
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-light-canopy" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="container hero-content">
+    <a class="community-badge hero-enter" href="#sobre">
+      <span class="status-dot"></span> Open source · On-premise · Brasil{' '}
+      <Icon name="arrow-right" size={13} />
+    </a>
+    <h1 id="hero-title">
+      <span class="headline-line">Inteligência artificial.</span>
+      <span class="headline-line gradient-text">
+        Seu hardware. Suas regras.
+      </span>
+    </h1>
+    <p class="hero-description hero-enter">
+      A comunidade de quem roda inteligência artificial
+      <br class="desktop-break" />
+      <strong>no próprio hardware</strong> — sem caixa-preta, sem lock-in.
+    </p>
+    <div class="hero-actions hero-enter">
+      <a
+        class="button button-primary"
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Entrar no WhatsApp <Icon name="arrow-up-right" size={17} />
+      </a>
+      <a class="button button-secondary" href="#stack">
+        Ver a stack <Icon name="arrow-down" size={16} />
+      </a>
+    </div>
+    <div class="hero-meta hero-enter">
+      <span>
+        <Icon name="check" size={12} /> Comunidade gratuita
+      </span>
+      <span>
+        <Icon name="check" size={12} /> Sem paywall
+      </span>
+      <span>
+        <i class="brazil-dot"></i> Troca real
+      </span>
+    </div>
+  </div>
+  <div class="hardware-scene" aria-hidden="true">
+    <div class="reactor-halo">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <div class="reactor-beam"></div>
+    <div class="scene-glow parallax-layer" data-depth="0.12"></div>
+    <div class="floor-grid"></div>
+    <div class="orbit orbit-one"></div>
+    <div class="orbit orbit-two"></div>
+    <svg class="connection-lines" viewBox="0 0 1120 440" fill="none">
+      <defs>
+        <linearGradient id="wire">
+          <stop stop-color="#2e97ff" stop-opacity="0" />
+          <stop offset=".5" stop-color="#46c8ff" />
+          <stop offset="1" stop-color="#7e64ff" stop-opacity=".1" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M80 100h235l120 120h280L840 95h200M10 300h320l100-100h235l135 135h310M190 440l195-195h350l120 120h170"
+        stroke="url(#wire)"
+      />
+      <path
+        class="signal"
+        d="M80 100h235l120 120h280L840 95h200"
+        stroke="#91e4ff"
+        stroke-width="2"
+      />
+      <path
+        class="signal signal-secondary"
+        d="M10 300h320l100-100h235l135 135h310"
+        stroke="#b19aff"
+        stroke-width="2"
+      />
+      <path
+        class="signal signal-third"
+        d="M190 440l195-195h350l120 120h170"
+        stroke="#46c8ff"
+        stroke-width="2"
+      />
+    </svg>
+    <div class="float-panel terminal-panel parallax-layer" data-depth="-0.05">
+      <div class="panel-bar">
+        <span class="window-dots">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span>seu-primeiro-modelo.sh</span>
+        <Icon name="terminal" size={12} />
+      </div>
+      <div class="terminal-body">
+        <p>
+          <span class="terminal-purple">~</span>{' '}
+          <span class="terminal-white">ollama run llama3.2</span>
+        </p>
+        <p class="terminal-dim">carregando modelo...</p>
+        <p>
+          <span class="terminal-green">✓</span> Modelo pronto. Rodando local.
+        </p>
+        <p class="terminal-prompt">
+          &gt;&gt;&gt; O que vamos construir? <i></i>
+        </p>
+      </div>
+      <div class="terminal-bottom">
+        <span>
+          <i class="tiny-led"></i> localhost:11434
+        </span>
+        <span>seus dados, aqui.</span>
+      </div>
+    </div>
+    <div class="chip-stage parallax-layer" data-depth="0.08">
+      <div class="chip-shadow"></div>
+      <div class="chip-stack">
+        <div class="chip-layer layer-bottom"></div>
+        <div class="chip-layer layer-middle"></div>
+        <div class="chip-layer layer-top">
+          <div class="chip-circuit"></div>
+          <div class="chip-inner">
+            <Logo size={68} />
+            <span>
+              IA na lata<span class="chip-period">.</span>
+            </span>
+            <small>SEU HARDWARE. SUAS REGRAS.</small>
+          </div>
+          <span class="chip-screw screw-one"></span>
+          <span class="chip-screw screw-two"></span>
+          <span class="chip-screw screw-three"></span>
+          <span class="chip-screw screw-four"></span>
+        </div>
+      </div>
+    </div>
+    <div class="float-panel hardware-panel parallax-layer" data-depth="-0.1">
+      <div class="hardware-heading">
+        <span class="hardware-icon">
+          <Icon name="cpu" size={18} />
+        </span>
+        <span>
+          Infraestrutura própria<small>O controle é seu.</small>
+        </span>
+        <span class="tiny-led"></span>
+      </div>
+      <div class="server-unit">
+        <span class="server-slots"></span>
+        <i></i>
+        <i></i>
+      </div>
+      <div class="server-unit">
+        <span class="server-slots"></span>
+        <i></i>
+        <i></i>
+      </div>
+      <div class="hardware-bottom">
+        <span>ON-PREMISE</span>
+        <span class="terminal-green">● local first</span>
+      </div>
+    </div>
+    <div class="floating-tag tag-open parallax-layer" data-depth="-0.13">
+      <span class="tag-icon">
+        <Icon name="branch" size={17} />
+      </span>
+      <span>
+        Open source<small>Liberdade em cada camada</small>
+      </span>
+    </div>
+    <div class="floating-tag tag-community parallax-layer" data-depth="0.12">
+      <span class="tag-icon purple">
+        <Icon name="users" size={17} />
+      </span>
+      <span>
+        Comunidade que troca<small>Compartilhe · Aprenda · Evolua</small>
+      </span>
+      <span class="tiny-led"></span>
+    </div>
+    <div class="scene-caption">
+      <span class="caption-line"></span> DO DATACENTER PARA GRANDES IDEIAS{' '}
+      <span class="caption-line"></span>
+    </div>
+    <div class="hero-scroll-invitation">
+      <span class="scroll-invitation-line"></span>
+      <span>ROLE PARA EXPLORAR</span>
+      <Icon name="arrow-down" size={12} />
+    </div>
+  </div>
+</section>
+<div class="technology-strip">
+  <div class="container">
+    <p>As tecnologias abertas que movem a comunidade.</p>
+    <div
+      class="technology-names"
+      aria-label="Tecnologias exploradas pela comunidade"
+    >
+      <span>
+        <span class="tech-symbol">∞</span> Llama
+      </span>
+      <span>
+        <Icon name="terminal" size={22} /> Ollama
+      </span>
+      <span>
+        <span class="hf-mark">🤗</span> Hugging Face
+      </span>
+      <span>
+        <span class="pytorch-mark">◒</span> PyTorch
+      </span>
+      <span>
+        <span class="kube-mark">⎈</span> Kubernetes
+      </span>
+      <span class="vllm">
+        v<span>LLM</span>
+      </span>
+    </div>
+  </div>
+</div>
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+  .hero-light-canopy {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 650px;
+    overflow: hidden;
+    pointer-events: none;
+    mask-image: linear-gradient(#000, transparent 90%);
+  }
+  .hero-light-canopy span {
+    position: absolute;
+    width: 28%;
+    height: 125%;
+    left: 20%;
+    top: -20%;
+    transform: rotate(32deg);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #2e97ff0d 20%,
+      #67c7ff15 50%,
+      transparent
+    );
+    filter: blur(10px);
+    animation: canopy-sweep 14s ease-in-out infinite alternate;
+  }
+  .hero-light-canopy span:nth-child(2) {
+    left: 53%;
+    width: 17%;
+    transform: rotate(-30deg);
+    animation-delay: -6s;
+    background: linear-gradient(90deg, transparent, #9574ff18, transparent);
+  }
+  .hero-light-canopy span:nth-child(3) {
+    left: 42%;
+    width: 8%;
+    background: linear-gradient(90deg, transparent, #9dc5ff08, transparent);
+    filter: blur(12px);
+    opacity: 0.3;
+    animation-delay: -10s;
+  }
+  @keyframes canopy-sweep {
+    from {
+      translate: -25px 0;
+      rotate: -5deg;
+      opacity: 0.45;
+    }
+    to {
+      translate: 35px 0;
+      rotate: 7deg;
+      opacity: 1;
+    }
+  }
+  .reactor-halo {
+    position: absolute;
+    width: 660px;
+    height: 300px;
+    left: 50%;
+    top: 38px;
+    margin-left: -330px;
+    transform: rotate(-16deg);
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #114c9b30 0%, transparent 58%);
+  }
+  .reactor-halo i {
+    position: absolute;
+    inset: 0;
+    border: 1px solid #4191fc3b;
+    border-radius: 50%;
+    box-shadow:
+      0 -2px 8px #49a5ff22,
+      inset 0 2px 12px #439cff12;
+    animation: halo-breathe 6s ease-in-out infinite;
+  }
+  .reactor-halo i:nth-child(2) {
+    inset: 23px 55px;
+    border-color: #71cfff4d;
+    animation-delay: -2s;
+  }
+  .reactor-halo i:nth-child(3) {
+    inset: 48px 110px;
+    border-color: #a18bff5c;
+    animation-delay: -4s;
+  }
+  .reactor-beam {
+    position: absolute;
+    left: 50%;
+    top: -45px;
+    width: 420px;
+    height: 460px;
+    margin-left: -210px;
+    background: conic-gradient(
+      from 165deg at 50% 88%,
+      transparent 0deg,
+      #43aaff22 9deg,
+      #5bcaff45 15deg,
+      #67d3ff16 25deg,
+      transparent 31deg,
+      transparent 360deg
+    );
+    filter: blur(6px);
+    transform-origin: 50% 88%;
+    animation: reactor-beam-turn 9s ease-in-out infinite alternate;
+    mix-blend-mode: screen;
+  }
+  @keyframes halo-breathe {
+    0%,
+    100% {
+      transform: scale(0.96);
+      opacity: 0.45;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+  @keyframes reactor-beam-turn {
+    from {
+      rotate: -15deg;
+      opacity: 0.45;
+    }
+    to {
+      rotate: 12deg;
+      opacity: 0.95;
+    }
+  }
+  .hero-scroll-invitation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #9bb9df;
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+  .scroll-invitation-line {
+    height: 24px;
+    width: 1px;
+    background: linear-gradient(transparent, #9cc7ff);
+    animation: scroll-hint 2s ease-in-out infinite;
+  }
+  @keyframes scroll-hint {
+    0%,
+    100% {
+      scale: 1 0.6;
+      opacity: 0.35;
+    }
+    50% {
+      scale: 1 1;
+      opacity: 1;
+    }
+  }
+  .hero-aurora {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 45% 35% at 50% 34%, #20328a22, transparent 80%),
+      radial-gradient(ellipse 25% 35% at 20% 77%, #2e97ff10, transparent 85%),
+      radial-gradient(ellipse 35% 30% at 73% 64%, #7e64ff0d, transparent 80%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .community-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #829de027;
+    border-radius: 99px;
+    padding: 7px 12px 7px 10px;
+    background: linear-gradient(120deg, #24315050, #11223930);
+    font-size: 10px;
+    letter-spacing: 0.2px;
+    color: #c1cce0;
+  }
+  .community-badge svg {
+    margin-left: 6px;
+    color: #93a9d2;
+  }
+  .status-dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background: var(--led);
+    box-shadow: 0 0 10px #39e6a855;
+  }
+  .hero h1 {
+    max-width: 1060px;
+    font-size: clamp(44px, 6.2vw, 86px);
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+    font-weight: 580;
+    margin: 26px auto 22px;
+  }
+  .headline-line {
+    display: block;
+    text-wrap: balance;
+  }
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+  .hero-description strong {
+    font-weight: 400;
+    color: #c4cee1;
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 29px;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+    margin-top: 22px;
+    color: #97a8c2;
+    font-size: 10px;
+  }
+  .hero-meta > span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-meta svg {
+    color: #658eae;
+  }
+  .brazil-dot {
+    background: var(--led);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  .hardware-scene {
+    position: relative;
+    max-width: 1240px;
+    height: 435px;
+    margin: 26px auto 0;
+    isolation: isolate;
+  }
+  .scene-glow {
+    position: absolute;
+    width: 650px;
+    height: 400px;
+    left: 50%;
+    top: 0;
+    margin-left: -325px;
+    background: radial-gradient(
+      ellipse,
+      #186ed037,
+      #3253d511 46%,
+      transparent 67%
+    );
+    filter: blur(25px);
+  }
+  .floor-grid {
+    position: absolute;
+    inset: -60px -100px -40px;
+    background-image:
+      linear-gradient(#6787bf0b 1px, transparent 1px),
+      linear-gradient(90deg, #6787bf0b 1px, transparent 1px);
+    background-size: 52px 52px;
+    transform: perspective(500px) rotateX(58deg) rotateZ(-16deg) scale(1.4);
+    mask-image: radial-gradient(ellipse at center, #000 5%, transparent 61%);
+  }
+  .orbit {
+    position: absolute;
+    left: 50%;
+    top: 27px;
+    width: 780px;
+    height: 295px;
+    margin-left: -390px;
+    border: 1px solid #5888df10;
+    border-radius: 50%;
+    transform: rotate(-13deg);
+  }
+  .orbit-two {
+    width: 1040px;
+    height: 370px;
+    margin-left: -520px;
+    top: 0;
+    transform: rotate(-13deg);
+  }
+  .connection-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0.32;
+  }
+  .signal {
+    stroke-dasharray: 30 1200;
+    animation: signal 9s linear infinite;
+  }
+  .chip-stage {
+    position: absolute;
+    width: 330px;
+    height: 300px;
+    left: 50%;
+    top: 38px;
+    margin-left: -165px;
+    perspective: 900px;
+  }
+  .chip-shadow {
+    position: absolute;
+    inset: 90px -50px -20px;
+    background: #2581ff;
+    opacity: 0.15;
+    filter: blur(45px);
+    border-radius: 50%;
+  }
+  .chip-stack {
+    height: 260px;
+    width: 260px;
+    position: relative;
+    margin: 0 auto;
+    transform: rotateX(48deg) rotateZ(-33deg);
+    transform-style: preserve-3d;
+    animation: chip-float 7s ease-in-out infinite;
+  }
+  .chip-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    transform-style: preserve-3d;
+  }
+  .layer-bottom {
+    background: linear-gradient(130deg, #193759, #07152c 60%);
+    border: 1px solid #459aff88;
+    transform: translateZ(-37px);
+    box-shadow:
+      -3px 5px 0 #122947,
+      -6px 10px 0 #0b1a31,
+      -7px 12px 0 #3062a5,
+      -8px 15px 15px #0008,
+      -12px 22px 36px #1478ff44;
+  }
+  .layer-middle {
+    background: linear-gradient(145deg, #223952, #122841);
+    border: 1px solid #52baff;
+    transform: translateZ(-19px);
+    box-shadow:
+      0 3px 0 #41a1df,
+      0 5px 12px #2495ff55,
+      inset 0 0 20px #2586ff22;
+  }
+  .layer-top {
+    background: linear-gradient(
+      140deg,
+      #1d334e,
+      #14263f 46%,
+      #102236 75%,
+      #24475b
+    );
+    border: 1px solid #6989b2;
+    box-shadow:
+      inset 0 0 0 5px #0d182e,
+      inset 0 0 0 6px #6889aa55,
+      0 3px 0 #6589a777,
+      0 7px 0 #152b44,
+      0 8px 0 #52cfff99,
+      0 12px 15px #338cfc66;
+  }
+  .chip-circuit {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid #4d82a738;
+    border-radius: 11px;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 10px,
+      #72a8c31c 10px,
+      #72a8c31c 11px
+    );
+    mask-image: linear-gradient(
+      90deg,
+      #000,
+      transparent 20%,
+      transparent 80%,
+      #000
+    );
+  }
+  .chip-inner {
+    position: absolute;
+    inset: 40px;
+    border: 1px solid #6a8bac70;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2d425e66, #101e33);
+    box-shadow:
+      inset 0 0 35px #5876c516,
+      0 0 20px #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .chip-inner > svg {
+    filter: drop-shadow(0 0 9px #59baff55);
+  }
+  .chip-inner > span {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: -1px;
+    color: #e9f1ff;
+  }
+  .chip-period {
+    color: var(--cyan);
+  }
+  .chip-inner > small {
+    font-family: var(--font-mono);
+    font-size: 5.8px;
+    letter-spacing: 1.4px;
+    color: #81a3c4;
+  }
+  .chip-screw {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #88aec777;
+    box-shadow: 0 1px 2px black;
+  }
+  .screw-one {
+    left: 17px;
+    top: 17px;
+  }
+  .screw-two {
+    right: 17px;
+    top: 17px;
+  }
+  .screw-three {
+    left: 17px;
+    bottom: 17px;
+  }
+  .screw-four {
+    right: 17px;
+    bottom: 17px;
+  }
+  .float-panel {
+    position: absolute;
+    border: 1px solid #738fc92c;
+    border-radius: 11px;
+    box-shadow: 0 15px 40px #0003;
+    background: linear-gradient(145deg, #152239ee, #0c1628ed);
+    backdrop-filter: blur(10px);
+  }
+  .terminal-panel {
+    left: 8%;
+    top: 76px;
+    width: 290px;
+    transform: rotate(-5deg);
+    font-family: var(--font-mono);
+    font-size: 9px;
+  }
+  .panel-bar {
+    height: 32px;
+    border-bottom: 1px solid #567ba225;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    color: #8b9db7;
+    font-size: 7px;
+  }
+  .window-dots {
+    display: flex;
+    gap: 4px;
+  }
+  .window-dots i {
+    width: 5px;
+    height: 5px;
+    background: #ff737b99;
+    border-radius: 50%;
+  }
+  .window-dots i:nth-child(2) {
+    background: #f4c67488;
+  }
+  .window-dots i:nth-child(3) {
+    background: #50ca9b99;
+  }
+  .terminal-body {
+    padding: 16px;
+    line-height: 2.2;
+    color: #93adc7;
+  }
+  .terminal-purple {
+    color: #b29dff;
+  }
+  .terminal-white {
+    color: #e0e7f6;
+  }
+  .terminal-dim {
+    color: #788da9;
+  }
+  .terminal-green {
+    color: #6bd3b6;
+  }
+  .terminal-prompt {
+    margin-top: 7px;
+    color: #abcdf0;
+  }
+  .terminal-prompt i {
+    display: inline-block;
+    width: 5px;
+    height: 10px;
+    vertical-align: middle;
+    background: var(--cyan);
+    animation: cursor 1.2s step-end infinite;
+  }
+  .terminal-bottom {
+    border-top: 1px solid #567ba225;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 7px;
+    color: #829bb8;
+  }
+  .terminal-bottom > span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tiny-led {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--led);
+    box-shadow: 0 0 7px #39e6a866;
+  }
+  .hardware-panel {
+    right: 10%;
+    top: 36px;
+    width: 224px;
+    padding: 16px;
+    transform: rotate(6deg);
+  }
+  .hardware-heading {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    font-size: 10px;
+    color: #dce7f7;
+    margin-bottom: 16px;
+  }
+  .hardware-heading small {
+    display: block;
+    font-size: 8px;
+    color: #8ca0bc;
+    margin-top: 5px;
+  }
+  .hardware-heading > .tiny-led {
+    margin-left: auto;
+  }
+  .hardware-icon {
+    color: #7facdd;
+  }
+  .server-unit {
+    padding: 9px 10px;
+    border: 1px solid #698fc83d;
+    background: linear-gradient(180deg, #1c3048, #112038);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+    box-shadow: 0 2px 3px #0002;
+  }
+  .server-slots {
+    width: 92px;
+    height: 12px;
+    background: repeating-linear-gradient(
+      90deg,
+      #070f21 0,
+      #070f21 2px,
+      transparent 2px,
+      transparent 5px
+    );
+  }
+  .server-unit i {
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    background: #43acdc;
+    box-shadow: 0 0 5px #46c8ff66;
+  }
+  .server-unit i:first-of-type {
+    margin-left: auto;
+  }
+  .server-unit i:last-child {
+    background: var(--led);
+  }
+  .hardware-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.5px;
+    color: #8da2bd;
+    margin-top: 13px;
+  }
+  .floating-tag {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border: 1px solid #708bc928;
+    border-radius: 9px;
+    padding: 13px 17px;
+    background: linear-gradient(120deg, #19293dcd, #0b1527de);
+    box-shadow: 0 15px 35px #0002;
+    font-size: 10px;
+    color: #dce9fb;
+  }
+  .floating-tag small {
+    display: block;
+    font-size: 8px;
+    color: #93a6c1;
+    margin-top: 5px;
+  }
+  .tag-icon {
+    color: #75c7ff;
+    background: #2e97ff14;
+    display: flex;
+    padding: 8px;
+    border: 1px solid #7ccaff22;
+    border-radius: 7px;
+  }
+  .tag-icon.purple {
+    color: #b59cff;
+    background: #7e64ff16;
+    border-color: #aa93ff22;
+  }
+  .tag-open {
+    left: 22%;
+    top: 295px;
+    transform: rotate(-4deg);
+  }
+  .tag-community {
+    right: 13%;
+    top: 267px;
+    transform: rotate(4deg);
+  }
+  .tag-community > .tiny-led {
+    margin-left: 10px;
+  }
+  .scene-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: #8195b5;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  .caption-line {
+    height: 1px;
+    width: 65px;
+    background: linear-gradient(90deg, transparent, #7194c366);
+  }
+  .caption-line:last-child {
+    transform: rotate(180deg);
+  }
+  .technology-strip {
+    padding: 32px 0 36px;
+    border-bottom: 1px solid var(--line);
+  }
+  .technology-strip p {
+    color: #8496b2;
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 25px;
+  }
+  .technology-names {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 26px;
+    color: #b4bfd3;
+    font-size: 18px;
+    font-weight: 570;
+    letter-spacing: -0.5px;
+  }
+  .technology-names > span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    white-space: nowrap;
+  }
+  .tech-symbol {
+    font-size: 37px;
+    line-height: 0.5;
+    letter-spacing: -5px;
+    margin-right: 5px;
+  }
+  .hf-mark {
+    font-size: 22px;
+    filter: grayscale(1);
+    opacity: 0.8;
+  }
+  .pytorch-mark {
+    font-size: 31px;
+    transform: rotate(-40deg);
+    line-height: 0.6;
+  }
+  .kube-mark {
+    font-size: 31px;
+    line-height: 0.6;
+  }
+  .vllm {
+    font-style: italic;
+    font-size: 26px;
+    gap: 0 !important;
+    font-weight: 700;
+  }
+  .vllm > span {
+    font-weight: 420;
+    font-size: 21px;
+  }
+  @keyframes chip-float {
+    0%,
+    100% {
+      transform: rotateX(48deg) rotateZ(-33deg) translateZ(0);
+    }
+    50% {
+      transform: rotateX(48deg) rotateZ(-33deg) translateZ(10px);
+    }
+  }
+  @keyframes cursor {
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes signal {
+    to {
+      stroke-dashoffset: -1230;
+    }
+  }
+  .scene-glow {
+    background: radial-gradient(
+      ellipse,
+      #208af25e,
+      #4d4ac931 43%,
+      transparent 70%
+    );
+    filter: blur(24px);
+  }
+  .connection-lines {
+    opacity: 0.7;
+  }
+  .signal {
+    stroke-dasharray: 48 350;
+    animation-duration: 5s;
+    filter: drop-shadow(0 0 4px #46c8ff);
+  }
+  .signal-secondary {
+    animation-duration: 6.5s;
+    animation-delay: -3s;
+  }
+  .signal-third {
+    animation-duration: 7.5s;
+    animation-delay: -1s;
+  }
+  .layer-bottom {
+    animation: chip-base-breathe 7s ease-in-out infinite;
+  }
+  .layer-middle {
+    animation: chip-mid-breathe 7s ease-in-out infinite;
+  }
+  @keyframes chip-base-breathe {
+    0%,
+    100% {
+      transform: translateZ(-37px);
+    }
+    50% {
+      transform: translateZ(-62px);
+    }
+  }
+  @keyframes chip-mid-breathe {
+    0%,
+    100% {
+      transform: translateZ(-19px);
+    }
+    50% {
+      transform: translateZ(-32px);
+    }
+  }
+  .chip-circuit::after {
+    content: '';
+    position: absolute;
+    inset: -50% 0;
+    background: linear-gradient(
+      0deg,
+      transparent 40%,
+      #58caff44 50%,
+      transparent 60%
+    );
+    animation: chip-scan 5s linear infinite;
+  }
+  @keyframes chip-scan {
+    from {
+      translate: 0 -55%;
+    }
+    to {
+      translate: 0 55%;
+    }
+  }
+  .terminal-body p {
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(0 0 0 0);
+    animation: terminal-write 10s steps(28, end) infinite;
+  }
+  .terminal-body p:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+  .terminal-body p:nth-child(3) {
+    animation-delay: 1.5s;
+  }
+  .terminal-body p:nth-child(4) {
+    animation-delay: 2.4s;
+  }
+  @keyframes terminal-write {
+    0%,
+    3% {
+      clip-path: inset(0 100% 0 0);
+      opacity: 0.25;
+    }
+    22%,
+    90% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+      opacity: 0.25;
+    }
+  }
+  .server-unit i {
+    animation: server-led-pulse 2.8s ease-in-out infinite;
+  }
+  .server-unit i:last-child {
+    animation-delay: -1.4s;
+  }
+  .server-unit:nth-child(3) i {
+    animation-delay: -0.8s;
+  }
+  @keyframes server-led-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      box-shadow: 0 0 2px #46c8ff44;
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 9px #46c8ffcc;
+    }
+  }
+  .hardware-scene:not(.is-in-view) *,
+  .hardware-scene:not(.is-in-view) *::before,
+  .hardware-scene:not(.is-in-view) *::after {
+    animation-play-state: paused;
+  }
+  @media (min-width: 761px) {
+    .terminal-panel {
+      animation: terminal-drift 7s ease-in-out infinite;
+    }
+    .hardware-panel {
+      animation: rack-drift 8s -3s ease-in-out infinite;
+    }
+    .tag-open {
+      animation: tag-left-drift 6s -2s ease-in-out infinite;
+    }
+    .tag-community {
+      animation: tag-right-drift 7s ease-in-out infinite;
+    }
+    @keyframes terminal-drift {
+      0%,
+      100% {
+        transform: rotate(-5deg) translateY(0);
+      }
+      50% {
+        transform: rotate(-2deg) translateY(-15px);
+      }
+    }
+    @keyframes rack-drift {
+      0%,
+      100% {
+        transform: rotate(6deg) translateY(0);
+      }
+      50% {
+        transform: rotate(3deg) translateY(14px);
+      }
+    }
+    @keyframes tag-left-drift {
+      0%,
+      100% {
+        transform: rotate(-4deg) translateY(0);
+      }
+      50% {
+        transform: rotate(-1deg) translateY(-12px);
+      }
+    }
+    @keyframes tag-right-drift {
+      0%,
+      100% {
+        transform: rotate(4deg) translateY(0);
+      }
+      50% {
+        transform: rotate(7deg) translateY(12px);
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    .reactor-halo {
+      scale: 0.7;
+      top: 65px;
+    }
+    .reactor-beam {
+      scale: 0.85;
+    }
+    .hero-scroll-invitation {
+      font-size: 6px;
+      bottom: -17px;
+      gap: 7px;
+    }
+    .scene-caption {
+      bottom: 18px;
+    }
+    .hero-light-canopy {
+      height: 500px;
+      opacity: 0.7;
+    }
+  }
+  @media (min-width: 1500px) {
+    .hero {
+      padding-top: 80px;
+    }
+    .hardware-scene {
+      margin-top: 35px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .terminal-panel {
+      left: 2%;
+      width: 250px;
+      font-size: 8px;
+    }
+    .hardware-panel {
+      right: 3%;
+      width: 202px;
+    }
+    .chip-stage {
+      transform: scale(0.9);
+    }
+    .tag-open {
+      left: 14%;
+    }
+    .tag-community {
+      right: 6%;
+    }
+    .technology-names {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px 40px;
+    }
+    .hero h1 {
+      letter-spacing: -3px;
+    }
+  }
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 44px;
+    }
+    .community-badge {
+      font-size: 9px;
+      gap: 7px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 8.8vw, 53px);
+      letter-spacing: -2.1px;
+      margin-top: 29px;
+    }
+    .hero-description {
+      font-size: 13px;
+      line-height: 1.8;
+      max-width: 350px;
+      margin: auto;
+    }
+    .desktop-break {
+      display: none;
+    }
+    .hero-actions {
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .hero-actions .button {
+      font-size: 11px;
+      min-height: 45px;
+      padding: 12px 15px;
+    }
+    .hero-meta {
+      gap: 14px;
+      font-size: 8px;
+      flex-wrap: wrap;
+      row-gap: 9px;
+    }
+    .hero-meta > span:last-child {
+      display: none;
+    }
+    .hardware-scene {
+      height: 342px;
+      margin-top: 26px;
+    }
+    .chip-stage {
+      top: 18px;
+      transform: scale(0.76);
+    }
+    .terminal-panel {
+      left: calc(50% - 255px);
+      top: 88px;
+      transform: rotate(-7deg) scale(0.62);
+      transform-origin: center left;
+      width: 245px;
+      z-index: 2;
+    }
+    .hardware-panel {
+      right: calc(50% - 251px);
+      top: 46px;
+      transform: rotate(7deg) scale(0.65);
+      transform-origin: center right;
+      width: 205px;
+      z-index: 2;
+    }
+    .floating-tag {
+      padding: 9px;
+      gap: 8px;
+      font-size: 8px;
+    }
+    .floating-tag small {
+      font-size: 6.5px;
+    }
+    .tag-icon {
+      padding: 5px;
+    }
+    .tag-open {
+      left: 7%;
+      top: 250px;
+    }
+    .tag-community {
+      right: 6%;
+      top: 229px;
+    }
+    .tag-community > .tiny-led {
+      display: none;
+    }
+    .scene-caption {
+      font-size: 6px;
+      letter-spacing: 1.2px;
+      bottom: 9px;
+      gap: 10px;
+    }
+    .caption-line {
+      width: 30px;
+    }
+    .technology-strip {
+      padding: 26px 0 30px;
+    }
+    .technology-names {
+      gap: 24px 28px;
+      font-size: 14px;
+    }
+    .technology-names svg {
+      width: 18px;
+    }
+    .technology-strip p {
+      margin-bottom: 24px;
+    }
+    .tech-symbol {
+      font-size: 30px;
+    }
+    .vllm {
+      font-size: 23px;
+    }
+    .vllm > span {
+      font-size: 18px;
+    }
+    .hf-mark {
+      font-size: 18px;
+    }
+  }
+</style>

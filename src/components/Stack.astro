@@ -1,0 +1,1140 @@
+---
+import Icon from './Icon.astro';
+const categories = [
+  {
+    name: 'Modelos & Inferência',
+    icon: 'cpu',
+    label: 'PESOS E EXECUÇÃO',
+    title: 'Modelos e motores\nde inferência.',
+    description:
+      'Modelos de linguagem, geração de imagens e inferência no próprio hardware. Troque benchmarks, configurações e experiências com a comunidade.',
+    tools: [
+      {
+        name: 'Llama',
+        mark: '∞',
+        description: 'Família de modelos de linguagem.',
+      },
+      {
+        name: 'Ollama',
+        mark: '>_',
+        description: 'Execução de modelos localmente.',
+      },
+      {
+        name: 'vLLM',
+        mark: 'v',
+        description: 'Motor de inferência para LLMs.',
+      },
+      {
+        name: 'LLM-d',
+        mark: '⬡',
+        description: 'Inferência distribuída.',
+      },
+      {
+        name: 'Stable Diffusion',
+        mark: '✧',
+        description: 'Geração de imagens.',
+      },
+    ],
+    footer: 'Pesos abertos, setups e benchmarks reais.',
+  },
+  {
+    name: 'Frameworks de ML',
+    icon: 'layers',
+    label: 'TREINAMENTO E EXPERIMENTAÇÃO',
+    title: 'Ferramentas para\ntrabalhar com modelos.',
+    description:
+      'Frameworks de machine learning, modelos e datasets. Compartilhe código e aprendizado de quem trabalha com ML e dados.',
+    tools: [
+      {
+        name: 'PyTorch',
+        mark: '◒',
+        description: 'Framework de machine learning.',
+      },
+      {
+        name: 'TensorFlow',
+        mark: 'TF',
+        description: 'Framework de machine learning.',
+      },
+      {
+        name: 'Hugging Face',
+        mark: '🤗',
+        description: 'Modelos, datasets e ferramentas.',
+      },
+    ],
+    footer: 'Código aberto e conhecimento compartilhado.',
+  },
+  {
+    name: 'Apps & Agentes',
+    icon: 'code',
+    label: 'CONTEXTO E FERRAMENTAS',
+    title: 'Aplicações, RAG\ne agentes de IA.',
+    description:
+      'Aplicações com modelos de linguagem, recuperação de informação e agentes. Traga seu projeto e troque experiências sobre o que funcionou e o que quebrou.',
+    tools: [
+      {
+        name: 'LangChain',
+        mark: '↔',
+        description: 'Desenvolvimento de aplicações com LLMs.',
+      },
+      {
+        name: 'RAG',
+        mark: '⌕',
+        description: 'Geração com recuperação de informação.',
+      },
+      {
+        name: 'OpenCode',
+        mark: '</>',
+        icon: 'code',
+        description: 'Agente de programação.',
+      },
+    ],
+    footer: 'Projetos, código e troca de experiências.',
+  },
+  {
+    name: 'Infra & Orquestração',
+    icon: 'server',
+    label: 'DO METAL AO CLUSTER',
+    title: 'Infraestrutura\ne operação.',
+    description:
+      'Orquestração no cluster, processamento distribuído e fluxos de dados. Compartilhe seu setup e os desafios de operar on-premise, na nuvem privada ou no home lab.',
+    tools: [
+      {
+        name: 'Kubernetes',
+        mark: '⎈',
+        description: 'Orquestração de contêineres.',
+      },
+      {
+        name: 'Ray',
+        mark: '⠿',
+        description: 'Processamento e aplicações distribuídas.',
+      },
+      {
+        name: 'Jupyter',
+        mark: '◉',
+        description: 'Notebooks para código e experimentos.',
+      },
+      {
+        name: 'Apache NiFi',
+        mark: '⋈',
+        description: 'Automação de fluxos de dados.',
+      },
+    ],
+    footer: 'Do home lab ao datacenter.',
+  },
+];
+---
+
+<section id="stack" class="stack-section" data-stack-section>
+  <div class="container">
+    <header class="stack-heading reveal">
+      <div>
+        <span class="eyebrow">
+          <span class="section-label">03 /</span> A caixa de ferramentas
+        </span>
+        <h2 class="section-heading">
+          A stack que a gente
+          <br />
+          <span class="gradient-text">coloca na lata</span>
+        </h2>
+      </div>
+      <p>
+        As tecnologias abertas que movem a comunidade — de pesos e inferência à
+        orquestração no cluster.
+      </p>
+    </header>
+
+    <div class="stack-explorer">
+      <div class="stack-observatory">
+        <div class="engine-meta" aria-hidden="true">
+          <span>
+            <i></i> SISTEMAS CONECTADOS
+          </span>
+          <span>01 — 04</span>
+        </div>
+        <div class="engine-frame" aria-hidden="true">
+          <div class="engine-aura"></div>
+          <div class="engine-grid"></div>
+          <svg class="stack-engine" viewBox="0 0 540 500" fill="none">
+            <defs>
+              <linearGradient
+                id="stack-plane"
+                x1="90"
+                y1="130"
+                x2="420"
+                y2="330"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#46c8ff" stop-opacity=".14" />
+                <stop offset=".55" stop-color="#102847" stop-opacity=".8" />
+                <stop offset="1" stop-color="#7e64ff" stop-opacity=".15" />
+              </linearGradient>
+              <linearGradient
+                id="stack-edge"
+                x1="85"
+                y1="240"
+                x2="450"
+                y2="240"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#46c8ff" />
+                <stop offset=".5" stop-color="#8fcdff" />
+                <stop offset="1" stop-color="#7e64ff" />
+              </linearGradient>
+              <linearGradient
+                id="stack-core"
+                x1="215"
+                y1="163"
+                x2="329"
+                y2="224"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#a3e5ff" />
+                <stop offset=".45" stop-color="#2e97ff" />
+                <stop offset="1" stop-color="#7052fa" />
+              </linearGradient>
+              <radialGradient id="stack-floor">
+                <stop stop-color="#46c8ff" stop-opacity=".24" />
+                <stop offset="1" stop-color="#2e97ff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <ellipse
+              cx="270"
+              cy="376"
+              rx="230"
+              ry="70"
+              fill="url(#stack-floor)"
+            />
+            <g class="engine-orbits">
+              <ellipse
+                cx="270"
+                cy="258"
+                rx="244"
+                ry="130"
+                stroke="#518aba"
+                stroke-opacity=".22"
+                stroke-dasharray="2 7"
+              />
+              <ellipse
+                cx="270"
+                cy="258"
+                rx="224"
+                ry="112"
+                stroke="#5ab4ef"
+                stroke-opacity=".22"
+              />
+              <ellipse
+                class="orbit-flow"
+                cx="270"
+                cy="258"
+                rx="224"
+                ry="112"
+                stroke="url(#stack-edge)"
+                stroke-width="1.6"
+                stroke-dasharray="90 1040"
+              />
+              <ellipse
+                class="orbit-flow orbit-flow-reverse"
+                cx="270"
+                cy="258"
+                rx="244"
+                ry="130"
+                stroke="#8d7bff"
+                stroke-width="2"
+                stroke-dasharray="35 1168"
+              />
+            </g>
+            <path
+              class="engine-spine"
+              d="M270 89V381"
+              stroke="url(#stack-edge)"
+              stroke-opacity=".35"
+              stroke-dasharray="3 6"
+            />
+            {[3, 2, 1, 0].map((index) => {
+              const y = 119 + index * 48;
+              return (
+                <g
+                  class:list={['engine-layer', { 'is-active': index === 0 }]}
+                  data-engine-layer={index}
+                  style={`--layer-index: ${index}`}
+                >
+                  <path
+                    d={`M108 ${y + 79} 270 ${y} 432 ${y + 79} 270 ${y + 158}Z`}
+                    fill="url(#stack-plane)"
+                    stroke="url(#stack-edge)"
+                    stroke-opacity=".4"
+                  />
+                  <path
+                    d={`M108 ${y + 79}v8l162 79 162-79v-8M270 ${y + 158}v8`}
+                    stroke="url(#stack-edge)"
+                    stroke-opacity=".22"
+                  />
+                  <path
+                    class="plane-circuit"
+                    d={`M142 ${y + 79} 270 ${y + 17} 398 ${y + 79} 270 ${y + 141}ZM182 ${y + 60} 344 ${y + 139}M218 ${y + 42} 380 ${y + 121}M160 ${y + 104} 322 ${y + 25}M197 ${y + 122} 359 ${y + 43}`}
+                    stroke="#66b9f5"
+                    stroke-opacity=".13"
+                  />
+                  <path
+                    class="layer-signal"
+                    d={`M108 ${y + 79} 270 ${y + 158} 432 ${y + 79}`}
+                    stroke="url(#stack-edge)"
+                    stroke-width="2"
+                    stroke-dasharray="34 330"
+                  />
+                  <circle cx="108" cy={y + 79} r="3" fill="#46c8ff" />
+                  <circle cx="432" cy={y + 79} r="3" fill="#8d7bff" />
+                  <path
+                    d={`M270 ${y + 58} 312 ${y + 79} 270 ${y + 100} 228 ${y + 79}Z`}
+                    stroke="#a7ddff"
+                    stroke-opacity=".55"
+                  />
+                </g>
+              );
+            })}
+            <g class="engine-chip">
+              <path
+                d="m216 170 54-27 54 27v40l-54 27-54-27Z"
+                fill="#09172f"
+                stroke="url(#stack-edge)"
+              />
+              <path d="m216 170 54 27 54-27-54-27Z" fill="url(#stack-core)" />
+              <path
+                d="M270 197v40m-54-67 54 27 54-27"
+                stroke="#b5dfff"
+                stroke-opacity=".55"
+              />
+              <path
+                d="m247 171 11-6 21 10 14-7m-42 10 10-5m14-5 10-5"
+                stroke="#f0faff"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </g>
+            <g class="engine-satellites">
+              <path
+                d="M71 143 108 163 108 198M440 110 407 132v58M79 359l30-15 23-13M430 388v-43l-27-13"
+                stroke="#5dbbf0"
+                stroke-opacity=".3"
+                stroke-dasharray="3 5"
+              />
+              <circle
+                class="satellite-dot"
+                cx="71"
+                cy="143"
+                r="4"
+                fill="#70d3ff"
+              />
+              <circle
+                class="satellite-dot"
+                cx="440"
+                cy="110"
+                r="4"
+                fill="#9d8aff"
+                style="animation-delay: -.8s"
+              />
+              <circle
+                class="satellite-dot"
+                cx="79"
+                cy="359"
+                r="4"
+                fill="#70d3ff"
+                style="animation-delay: -1.5s"
+              />
+              <circle
+                class="satellite-dot"
+                cx="430"
+                cy="388"
+                r="4"
+                fill="#9d8aff"
+                style="animation-delay: -2s"
+              />
+            </g>
+          </svg>
+          <span class="engine-tag tag-one">
+            &gt;_ <span>Ollama</span>
+          </span>
+          <span class="engine-tag tag-two">
+            ◒ <span>PyTorch</span>
+          </span>
+          <span class="engine-tag tag-three">
+            ↔ <span>LangChain</span>
+          </span>
+          <span class="engine-tag tag-four">
+            ⎈ <span>Kubernetes</span>
+          </span>
+          <div class="engine-readout">
+            <span>CAMADA EM FOCO</span>
+            <strong data-engine-name>Modelos &amp; inferência</strong>
+          </div>
+        </div>
+        <nav class="stack-map" aria-label="Explore as camadas da stack">
+          {categories.map((category, i) => (
+            <a
+              href={`#${['stack-modelos', 'stack-frameworks', 'stack-agentes', 'stack-infra'][i]}`}
+              class:list={['stack-map-link', { 'is-active': i === 0 }]}
+              data-stack-link={i}
+            >
+              <span class="map-number">0{i + 1}</span>
+              <Icon name={category.icon} size={15} />
+              <span>{category.name}</span>
+              <Icon name="arrow-down" size={13} />
+            </a>
+          ))}
+        </nav>
+        <p class="engine-caption">
+          <span></span> De pesos e inferência à orquestração no cluster.
+        </p>
+      </div>
+
+      <div class="stack-chapters">
+        <div class="chapter-progress" aria-hidden="true">
+          <span></span>
+        </div>
+        {categories.map((category, i) => (
+          <article
+            id={
+              [
+                'stack-modelos',
+                'stack-frameworks',
+                'stack-agentes',
+                'stack-infra',
+              ][i]
+            }
+            class:list={['stack-chapter', { 'is-active': i === 0 }]}
+            data-stack-chapter={i}
+            data-stack-name={category.name}
+            aria-labelledby={`stack-title-${i}`}
+          >
+            <div class="chapter-kicker">
+              <span class="chapter-index">0{i + 1}</span>
+              <span>{category.name}</span>
+              <span class="chapter-line"></span>
+              <Icon name={category.icon} size={19} />
+            </div>
+            <p class="chapter-eyebrow">{category.label}</p>
+            <h3 id={`stack-title-${i}`}>
+              {category.title.split('\n').map((line) => (
+                <span>{line}</span>
+              ))}
+            </h3>
+            <p class="chapter-description">{category.description}</p>
+            <ul
+              class="stack-tools"
+              aria-label={`Ferramentas de ${category.name}`}
+            >
+              {category.tools.map((tool, toolIndex) => (
+                <li class="tool-item" style={`--tool-index: ${toolIndex}`}>
+                  <span
+                    class:list={[
+                      'tool-mark',
+                      { 'tool-emoji': tool.name === 'Hugging Face' },
+                    ]}
+                    aria-hidden="true"
+                  >
+                    {'icon' in tool && tool.icon ? (
+                      <Icon name={tool.icon} size={19} />
+                    ) : (
+                      tool.mark
+                    )}
+                  </span>
+                  <div>
+                    <h4>{tool.name}</h4>
+                    <p>{tool.description}</p>
+                  </div>
+                  <span class="tool-connection" aria-hidden="true">
+                    <span></span>
+                    <i></i>
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p class="chapter-footnote">
+              <Icon name="branch" size={12} />
+              {category.footer}
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+    <p class="stack-note">
+      <span>Modelos, ferramentas e infraestrutura.</span> A stack que a gente
+      coloca na lata.
+    </p>
+  </div>
+</section>
+
+<script>
+  import '../scripts/stack-motion';
+</script>
+
+<style>
+  .stack-section {
+    position: relative;
+    padding: 112px 0 60px;
+    border-block: 1px solid var(--line);
+    --stack-progress: 0;
+    --engine-turn: 0deg;
+  }
+  .stack-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 45px;
+    padding-bottom: 60px;
+  }
+  .stack-heading .section-heading {
+    margin-top: 22px;
+    font-size: clamp(38px, 4.2vw, 58px);
+    letter-spacing: -2.5px;
+  }
+  .stack-heading > p {
+    max-width: 270px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.85;
+    padding-bottom: 5px;
+  }
+  .stack-explorer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 88px;
+    align-items: start;
+  }
+  .stack-observatory {
+    position: sticky;
+    top: 100px;
+    padding-top: 24px;
+  }
+  .engine-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 8px var(--font-mono);
+    letter-spacing: 1.3px;
+    color: #92a9c9;
+    padding: 0 14px;
+  }
+  .engine-meta > span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .engine-meta i {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #46c8ff;
+    box-shadow: 0 0 10px #46c8ff;
+  }
+  .engine-frame {
+    position: relative;
+    aspect-ratio: 1.1;
+    margin: 4px -25px 14px;
+    isolation: isolate;
+    overflow: clip;
+  }
+  .engine-aura {
+    position: absolute;
+    inset: 8% 6%;
+    z-index: -1;
+    background: radial-gradient(
+      ellipse at 48% 60%,
+      #147cc72b 0,
+      #5644f415 35%,
+      transparent 68%
+    );
+    animation: engine-breathe 7s ease-in-out infinite alternate;
+  }
+  .engine-grid {
+    position: absolute;
+    inset: 48% -10% 3%;
+    z-index: -1;
+    background-image:
+      linear-gradient(#3e77b016 1px, transparent 1px),
+      linear-gradient(90deg, #3e77b016 1px, transparent 1px);
+    background-size: 28px 28px;
+    transform: perspective(340px) rotateX(58deg) rotateZ(-25deg);
+    mask-image: radial-gradient(ellipse, #000 10%, transparent 65%);
+  }
+  .stack-engine {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform: rotate(var(--engine-turn));
+  }
+  .engine-layer {
+    opacity: 0.54;
+    transition:
+      opacity 0.65s,
+      translate 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .engine-layer.is-active {
+    opacity: 1;
+    translate: 0 -9px;
+  }
+  .layer-signal {
+    animation: signal-flow 4s linear infinite;
+    animation-delay: calc(var(--layer-index) * -0.85s);
+  }
+  .engine-layer.is-active .layer-signal {
+    stroke-width: 3px;
+  }
+  .orbit-flow {
+    animation: orbital-flow 16s linear infinite;
+  }
+  .orbit-flow-reverse {
+    animation-direction: reverse;
+    animation-duration: 22s;
+  }
+  .engine-chip {
+    animation: chip-float 5s ease-in-out infinite;
+  }
+  .satellite-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: satellite-pulse 3s ease-in-out infinite;
+  }
+  .engine-tag {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #88baff32;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font: 13px var(--font-mono);
+    color: #9cdcff;
+    background: #0b182ade;
+    box-shadow:
+      0 5px 24px #03071155,
+      inset 0 1px #c4e8ff08;
+    animation: tag-drift 6s ease-in-out infinite;
+  }
+  .engine-tag > span {
+    font-size: 9px;
+    color: #c5d6f0;
+  }
+  .tag-one {
+    left: 3%;
+    top: 25%;
+  }
+  .tag-two {
+    right: 3%;
+    top: 17%;
+    animation-delay: -1.5s;
+  }
+  .tag-three {
+    left: 2%;
+    bottom: 20%;
+    animation-delay: -3s;
+  }
+  .tag-four {
+    right: 0;
+    bottom: 14%;
+    animation-delay: -4.5s;
+  }
+  .engine-readout {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .engine-readout > span {
+    display: block;
+    font: 7px var(--font-mono);
+    letter-spacing: 1.8px;
+    color: #849abb;
+    margin-bottom: 6px;
+  }
+  .engine-readout strong {
+    display: block;
+    color: #c2e8ff;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .stack-map {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #718dab26;
+  }
+  .stack-map-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 10px;
+    border-bottom: 1px solid #718dab26;
+    font-size: 9px;
+    color: #99acc9;
+    position: relative;
+    transition:
+      color 0.3s,
+      background 0.3s;
+  }
+  .stack-map-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #46c8ff, #7e64ff);
+    transition: width 0.7s;
+  }
+  .stack-map-link.is-active::before {
+    width: 100%;
+  }
+  .stack-map-link.is-active {
+    color: #dcf1ff;
+    background: linear-gradient(100deg, #46c8ff0c, transparent);
+  }
+  .stack-map-link:hover {
+    color: #fff;
+    background: #46c8ff0b;
+  }
+  .stack-map-link > :global(svg:first-of-type) {
+    color: #75bff3;
+  }
+  .stack-map-link > :global(svg:last-child) {
+    margin-left: auto;
+    opacity: 0.65;
+    width: 11px;
+  }
+  .map-number {
+    font: 7px var(--font-mono);
+    color: #8ca1c0;
+  }
+  .engine-caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    color: #95a9c7;
+    font-size: 9px;
+  }
+  .engine-caption > span {
+    height: 1px;
+    width: 15px;
+    background: #46c8ff;
+  }
+  .stack-chapters {
+    position: relative;
+    min-width: 0;
+  }
+  .chapter-progress {
+    position: absolute;
+    left: -35px;
+    top: 32px;
+    bottom: 45px;
+    width: 1px;
+    background: #7496c522;
+  }
+  .chapter-progress > span {
+    display: block;
+    height: 100%;
+    transform: scaleY(var(--stack-progress));
+    transform-origin: top;
+    background: linear-gradient(#46c8ff, #7e64ff);
+    box-shadow: 0 0 13px #46c8ff55;
+  }
+  .stack-chapter {
+    position: relative;
+    padding: 30px 0 65px;
+    min-height: 590px;
+    scroll-margin-top: 112px;
+  }
+  .stack-chapter::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: -38px;
+    top: 40px;
+    border-radius: 50%;
+    background: #153051;
+    border: 1px solid #6b93c0;
+    transition:
+      background 0.4s,
+      box-shadow 0.4s;
+  }
+  .stack-chapter.is-active::before {
+    background: #46c8ff;
+    border-color: #b7eaff;
+    box-shadow:
+      0 0 0 5px #46c8ff12,
+      0 0 18px #46c8ff80;
+  }
+  .stack-chapter + .stack-chapter {
+    border-top: 1px solid #7195c21c;
+    padding-top: 44px;
+  }
+  .stack-chapter + .stack-chapter::before {
+    top: 54px;
+  }
+  .chapter-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    color: #b6cceb;
+  }
+  .chapter-index {
+    font: 10px var(--font-mono);
+    color: #69c7ff;
+  }
+  .chapter-line {
+    height: 1px;
+    flex: 1;
+    margin-inline: 4px;
+    background: #709ccc28;
+  }
+  .chapter-kicker > :global(svg) {
+    color: #8cacd2;
+  }
+  .chapter-eyebrow {
+    font: 8px var(--font-mono);
+    color: #9baac7;
+    letter-spacing: 1.1px;
+    margin-top: 35px;
+  }
+  .stack-chapter h3 {
+    font-size: clamp(28px, 2.7vw, 37px);
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin: 15px 0 19px;
+  }
+  .stack-chapter h3 > span {
+    display: block;
+  }
+  .stack-chapter h3 > span:last-child {
+    color: #acbddb;
+  }
+  .chapter-description {
+    font-size: 12px;
+    line-height: 1.85;
+    color: #9baeca;
+    max-width: 435px;
+  }
+  .stack-tools {
+    list-style: none;
+    margin: 25px 0 0;
+    padding: 0;
+  }
+  .tool-item {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    position: relative;
+    padding: 12px 0;
+    border-bottom: 1px solid #7498c51b;
+    transition: transform 0.3s;
+  }
+  .tool-item:hover {
+    transform: translateX(5px);
+  }
+  .tool-mark {
+    display: grid;
+    place-items: center;
+    width: 33px;
+    height: 33px;
+    flex-shrink: 0;
+    border: 1px solid #86b3de36;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #20385077, #10244333);
+    box-shadow: inset 0 1px #b7ddff0a;
+    color: #b2daff;
+    font: 19px var(--font-mono);
+    transition:
+      border-color 0.3s,
+      transform 0.3s;
+  }
+  .tool-item:hover .tool-mark {
+    border-color: #46c8ff99;
+    transform: rotate(-6deg);
+  }
+  .tool-item h4 {
+    font-size: 12px;
+    font-weight: 550;
+    margin-bottom: 1px;
+  }
+  .tool-item p {
+    font-size: 10px;
+    color: #92a8c7;
+    line-height: 1.55;
+  }
+  .tool-emoji {
+    font-size: 18px;
+  }
+  .tool-connection {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+    padding-left: 8px;
+  }
+  .tool-connection > span {
+    width: 14px;
+    height: 1px;
+    background: #5ca4d943;
+  }
+  .tool-connection > i {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #6bbff2;
+    opacity: 0.4;
+  }
+  .stack-chapter.is-active .tool-connection > i {
+    animation: connection-pulse 3s ease-in-out infinite;
+    animation-delay: calc(var(--tool-index) * 0.3s);
+  }
+  .chapter-footnote {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 9px;
+    color: #96adcb;
+    margin-top: 20px;
+  }
+  .chapter-footnote :global(svg) {
+    color: #74b7e8;
+  }
+  .stack-note {
+    padding-top: 26px;
+    border-top: 1px solid #7195c225;
+    text-align: center;
+    font-size: 11px;
+    color: #90a8c9;
+  }
+  .stack-note > span {
+    color: #c6dbf4;
+    margin-right: 8px;
+  }
+  .engine-frame:not(.is-in-view) *,
+  .stack-section:not(.is-in-view) *,
+  .stack-section:not(.is-in-view) *::before,
+  .stack-section:not(.is-in-view) *::after {
+    animation-play-state: paused !important;
+  }
+  @keyframes signal-flow {
+    to {
+      stroke-dashoffset: -364;
+    }
+  }
+  @keyframes orbital-flow {
+    to {
+      stroke-dashoffset: -1130;
+    }
+  }
+  @keyframes engine-breathe {
+    from {
+      opacity: 0.55;
+      transform: scale(0.93);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+  }
+  @keyframes chip-float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -10px;
+    }
+  }
+  @keyframes satellite-pulse {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(0.7);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  @keyframes tag-drift {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -8px;
+    }
+  }
+  @keyframes connection-pulse {
+    0%,
+    100% {
+      opacity: 0.25;
+      box-shadow: 0 0 0 #46c8ff00;
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 8px #46c8ff88;
+    }
+  }
+  @media (max-width: 1100px) {
+    .stack-explorer {
+      column-gap: 58px;
+    }
+    .chapter-progress {
+      left: -24px;
+    }
+    .stack-chapter::before {
+      left: -27px;
+    }
+    .stack-map-link {
+      padding-inline: 5px;
+      gap: 6px;
+      font-size: 8px;
+    }
+    .stack-heading {
+      gap: 28px;
+    }
+    .stack-heading > p {
+      max-width: 225px;
+      font-size: 12px;
+    }
+    .engine-tag {
+      padding: 5px 7px;
+    }
+    .engine-tag > span {
+      font-size: 8px;
+    }
+  }
+  @media (max-width: 760px) {
+    .stack-section {
+      padding: 74px 0 42px;
+    }
+    .stack-heading {
+      display: block;
+      padding-bottom: 24px;
+    }
+    .stack-heading .section-heading {
+      font-size: clamp(34px, 6vw, 46px);
+      letter-spacing: -1.8px;
+      margin-top: 18px;
+    }
+    .stack-heading > p {
+      margin-top: 22px;
+      max-width: 410px;
+      font-size: 12px;
+    }
+    .stack-explorer {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .stack-observatory {
+      position: relative;
+      top: auto;
+      padding-top: 14px;
+    }
+    .engine-frame {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      aspect-ratio: 1.14;
+    }
+    .engine-meta {
+      padding-inline: 0;
+      font-size: 7px;
+    }
+    .engine-tag > span {
+      font-size: 9px;
+    }
+    .engine-readout {
+      bottom: 0;
+    }
+    .stack-map-link {
+      font-size: 10px;
+      padding: 15px 9px;
+      gap: 9px;
+    }
+    .engine-caption {
+      font-size: 9px;
+    }
+    .stack-chapters {
+      padding-left: 19px;
+    }
+    .chapter-progress {
+      left: 0;
+      top: 38px;
+      bottom: 46px;
+    }
+    .stack-chapter::before {
+      left: -22px;
+    }
+    .stack-chapter {
+      min-height: 0;
+      padding: 30px 0 44px;
+      scroll-margin-top: 90px;
+    }
+    .stack-chapter + .stack-chapter {
+      padding-top: 32px;
+    }
+    .stack-chapter + .stack-chapter::before {
+      top: 42px;
+    }
+    .chapter-eyebrow {
+      margin-top: 28px;
+      font-size: 7px;
+      letter-spacing: 0.8px;
+    }
+    .stack-chapter h3 {
+      font-size: clamp(27px, 6vw, 36px);
+      letter-spacing: -1.2px;
+      margin-top: 13px;
+    }
+    .chapter-description {
+      font-size: 12px;
+      max-width: none;
+    }
+    .chapter-footnote {
+      font-size: 8px;
+      gap: 6px;
+    }
+    .stack-tools {
+      margin-top: 20px;
+    }
+    .tool-item {
+      padding: 12px 0;
+    }
+    .tool-item p {
+      font-size: 10px;
+    }
+    .tool-connection {
+      padding-left: 0;
+    }
+    .tool-connection > span {
+      width: 9px;
+    }
+    .stack-note {
+      font-size: 10px;
+      line-height: 1.8;
+    }
+    .stack-note > span {
+      display: block;
+      margin: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stack-section *,
+    .stack-section *::before,
+    .stack-section *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    .stack-engine {
+      transform: none;
+    }
+    .engine-layer.is-active {
+      translate: none;
+    }
+  }
+</style>

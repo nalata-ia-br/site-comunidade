@@ -1,0 +1,165 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { WHATSAPP_URL } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-identity">
+        <a
+          class="footer-brand"
+          href="#top"
+          aria-label="nalata / IA — voltar ao início"
+        >
+          <Logo size={39} />
+          <span>
+            nalata<span class="brand-dot"> / IA</span>
+          </span>
+        </a>
+        <p>Do datacenter para grandes ideias.</p>
+      </div>
+      <nav class="footer-navigation" aria-label="Navegação do rodapé">
+        <a href="#sobre">A comunidade</a>
+        <a href="#stack">Nossa stack</a>
+        <a href="#perguntas">Perguntas frequentes</a>
+        <a
+          class="footer-whatsapp"
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp <Icon name="arrow-up-right" size={15} />
+        </a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} IA na lata</span>
+      <span class="footer-signature">
+        <span></span> Open source. On-premise. Brasil.
+      </span>
+      <a href="#top" class="back-to-top">
+        De volta ao topo <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid rgba(148, 168, 202, 0.16);
+    padding: 47px 0 0;
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 45px;
+  }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -0.05em;
+  }
+  .brand-dot {
+    color: #46c8ff;
+  }
+  .footer-identity p {
+    color: #94a8ca;
+    font-size: 11px;
+    margin: 13px 0 0;
+  }
+  .footer-navigation {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-navigation a {
+    font-size: 11px;
+    color: #94a8ca;
+    transition: color 0.2s ease;
+  }
+  .footer-navigation a:hover {
+    color: #e9f1ff;
+  }
+  .footer-navigation .footer-whatsapp {
+    color: #c0d4f1;
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 23px 0;
+    border-top: 1px solid rgba(148, 168, 202, 0.1);
+    font-size: 10px;
+    color: #8299bb;
+  }
+  .footer-signature {
+    font-family: var(--font-mono, monospace);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 9px;
+  }
+  .footer-signature > span {
+    background: #39e6a8;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+  .back-to-top {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    transition: color 0.2s ease;
+  }
+  .back-to-top:hover {
+    color: #e9f1ff;
+  }
+  .back-to-top > span {
+    font-size: 16px;
+  }
+  @media (max-width: 900px) {
+    .footer-navigation {
+      gap: 18px;
+    }
+  }
+  @media (max-width: 680px) {
+    .site-footer {
+      padding-top: 34px;
+    }
+    .footer-top {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 28px;
+      padding-bottom: 32px;
+    }
+    .footer-navigation {
+      gap: 18px 24px;
+    }
+    .footer-bottom {
+      flex-wrap: wrap;
+      gap: 19px 25px;
+    }
+    .footer-signature {
+      order: 3;
+      width: 100%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .footer-navigation a,
+    .back-to-top {
+      transition: none;
+    }
+  }
+</style>

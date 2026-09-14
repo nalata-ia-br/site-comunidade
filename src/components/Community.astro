@@ -1,0 +1,554 @@
+---
+import Icon from './Icon.astro';
+import { WHATSAPP_URL } from '../data/site';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Compartilhe',
+    text: 'Traz seu projeto, seu setup de GPU, aquele erro chato do Kubernetes. Conhecimento aqui circula.',
+    icon: 'users',
+  },
+  {
+    number: '02',
+    title: 'Aprenda',
+    text: 'Benchmarks reais, tutoriais de on-premise e a experiência de quem já apanhou pra fazer funcionar.',
+    icon: 'terminal',
+  },
+  {
+    number: '03',
+    title: 'Evolua',
+    text: 'Sai do grupo com stack nova pra testar, contatos de verdade e ideias pra levar pro datacenter.',
+    icon: 'code',
+  },
+];
+
+const questions = [
+  {
+    question: 'É gratuito participar?',
+    answer:
+      'Sim. A IA na lata é uma comunidade gratuita. Não cobramos pelo acesso e não vendemos cursos. O que nos reúne é a troca de conhecimento e de experiências práticas.',
+  },
+  {
+    question: 'Preciso ter um datacenter?',
+    answer:
+      'O assunto vai do home lab ao datacenter. A comunidade explora inteligência artificial em infraestrutura própria, ambientes on-premise e nuvens privadas. Diferentes setups trazem diferentes aprendizados para a conversa.',
+  },
+  {
+    question: 'O que a gente conversa por lá?',
+    answer:
+      'Modelos de pesos abertos, inferência local, GPUs, RAG, agentes e infraestrutura. Compartilhamos setups, benchmarks, tutoriais e experiências com ferramentas como Ollama, vLLM, PyTorch e Kubernetes — incluindo o que funcionou e o que deu trabalho.',
+  },
+  {
+    question: 'Para quem é a IA na lata?',
+    answer:
+      'Para quem constrói, opera ou está explorando inteligência artificial com ferramentas abertas e infraestrutura própria. Gente de infraestrutura, machine learning e dados encontra aqui um espaço para compartilhar dúvidas, projetos e descobertas.',
+  },
+  {
+    question: 'Como faço para entrar?',
+    answer:
+      'Clique em “Entrar no WhatsApp” para abrir o convite e solicitar sua participação. A entrada passa pela aprovação de um administrador. Depois, é só se apresentar e começar a trocar ideias com a comunidade.',
+  },
+];
+---
+
+<section id="participar" class="community-section">
+  <div class="container">
+    <div class="join-intro reveal">
+      <div>
+        <span class="eyebrow">
+          <span class="section-label">04 /</span> Como participar
+        </span>
+        <h2 class="section-heading">
+          Três passos
+          <br />e você está dentro
+        </h2>
+      </div>
+      <p>
+        Compartilhe. Aprenda. Evolua.
+        <br />
+        Conhecimento aqui circula.
+      </p>
+    </div>
+
+    <ol class="join-steps">
+      {steps.map((step) => (
+        <li class="join-step reveal">
+          <div class="step-top">
+            <span class="step-number">{step.number}</span>
+            <span class="step-icon">
+              <Icon name={step.icon} size={20} />
+            </span>
+          </div>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="join-cta reveal">
+      <div class="cta-orbits" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cta-content">
+        <span class="community-badge">
+          <span></span> Comunidade gratuita
+        </span>
+        <h2>
+          Bora colocar
+          <br />
+          <span class="gradient-text">IA na lata?</span>
+        </h2>
+        <p>
+          A comunidade vive no WhatsApp — direto, sem burocracia.
+          <br />
+          Entra, se apresenta e manda a real.
+        </p>
+        <a
+          class="button button-primary join-button"
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="whatsapp" size={19} />
+          Entrar no WhatsApp
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+        <span class="join-note">
+          <Icon name="check" size={13} /> Entrada com aprovação de admin ·
+          Comunidade gratuita
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="perguntas" class="faq-section">
+  <div class="container faq-grid">
+    <div class="faq-intro reveal">
+      <span class="eyebrow">
+        <span class="section-label">05 /</span> Antes de chegar
+      </span>
+      <h2 class="section-heading">
+        Ainda com
+        <br />
+        alguma dúvida?
+      </h2>
+      <p>
+        O essencial para conhecer
+        <br class="desktop-break" /> a IA na lata e fazer parte.
+      </p>
+      <a
+        class="faq-link"
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Conhecer a comunidade <Icon name="arrow-up-right" size={17} />
+      </a>
+    </div>
+    <div class="faq-list reveal">
+      {questions.map(({ question, answer }, index) => (
+        <details class="faq-item" name="community-faq">
+          <summary>
+            <span class="faq-number" aria-hidden="true">
+              0{index + 1}
+            </span>
+            <span>{question}</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <Icon name="plus" size={18} />
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>{answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .community-section {
+    padding: 120px 0 0;
+    scroll-margin-top: 104px;
+  }
+  .join-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 54px;
+  }
+  .join-intro .section-heading {
+    margin-top: 24px;
+  }
+  .join-intro > p {
+    color: #94a8ca;
+    font-size: 16px;
+    line-height: 1.7;
+    padding-bottom: 4px;
+  }
+  .join-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 94px;
+  }
+  .join-step {
+    border-top: 1px solid rgba(148, 168, 202, 0.2);
+    padding: 28px 35px 0 0;
+    position: relative;
+  }
+  .join-step + .join-step {
+    padding-left: 30px;
+  }
+  .join-step + .join-step::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    top: 28px;
+    bottom: 3px;
+    left: 0;
+    background: linear-gradient(rgba(148, 168, 202, 0.17), transparent);
+  }
+  .step-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 23px;
+  }
+  .step-number {
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #7590b7;
+  }
+  .step-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: #80b9fc;
+    border-radius: 10px;
+    background: rgba(46, 151, 255, 0.07);
+    border: 1px solid rgba(46, 151, 255, 0.1);
+  }
+  .join-step h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    margin: 0 0 12px;
+  }
+  .join-step p {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #94a8ca;
+    margin: 0;
+    max-width: 290px;
+  }
+  .join-cta {
+    overflow: hidden;
+    isolation: isolate;
+    position: relative;
+    text-align: center;
+    border: 1px solid rgba(92, 147, 220, 0.2);
+    border-radius: 24px;
+    background:
+      radial-gradient(
+        ellipse 60% 100% at 50% 110%,
+        rgba(46, 151, 255, 0.15),
+        transparent 85%
+      ),
+      linear-gradient(150deg, rgba(22, 39, 67, 0.5), rgba(11, 20, 37, 0.3));
+  }
+  .join-cta::before {
+    content: '';
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    top: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(100, 186, 255, 0.65),
+      transparent
+    );
+  }
+  .cta-content {
+    padding: 75px 22px 64px;
+    position: relative;
+    z-index: 1;
+  }
+  .community-badge {
+    color: #b1c0d8;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .community-badge > span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #46c8ff;
+    box-shadow: 0 0 12px rgba(70, 200, 255, 0.7);
+  }
+  .join-cta h2 {
+    margin: 25px 0 22px;
+    font-size: clamp(30px, 4.1vw, 49px);
+    line-height: 1.16;
+    font-weight: 500;
+    letter-spacing: -0.055em;
+  }
+  .join-cta p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #94a8ca;
+    margin: 0 0 28px;
+  }
+  .join-button {
+    display: inline-flex;
+    gap: 10px;
+  }
+  .join-note {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 19px;
+    color: #8ba3c6;
+    font-size: 10px;
+  }
+  .join-note :global(svg) {
+    color: #80b9fc;
+  }
+  .cta-orbits {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  .cta-orbits span {
+    position: absolute;
+    left: 50%;
+    top: 88%;
+    width: 720px;
+    height: 330px;
+    border: 1px solid rgba(96, 159, 247, 0.12);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-9deg);
+    animation: cta-orbit-breathe 9s ease-in-out infinite alternate;
+  }
+  @keyframes cta-orbit-breathe {
+    from {
+      scale: 0.94;
+      opacity: 0.5;
+      rotate: -3deg;
+    }
+    to {
+      scale: 1.05;
+      opacity: 1;
+      rotate: 3deg;
+    }
+  }
+  .cta-orbits span:nth-child(2) {
+    width: 950px;
+    height: 460px;
+    animation-delay: -3s;
+  }
+  .cta-orbits span:nth-child(3) {
+    width: 1250px;
+    height: 610px;
+    animation-delay: -6s;
+  }
+  .faq-section {
+    padding: 126px 0 118px;
+    scroll-margin-top: 104px;
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.25fr;
+    gap: 90px;
+  }
+  .faq-intro .section-heading {
+    margin-top: 23px;
+  }
+  .faq-intro > p {
+    color: #94a8ca;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 21px 0 26px;
+  }
+  .faq-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #c1d4f1;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+  .faq-link:hover {
+    color: #46c8ff;
+  }
+  .faq-list {
+    border-top: 1px solid rgba(148, 168, 202, 0.2);
+  }
+  .faq-item {
+    border-bottom: 1px solid rgba(148, 168, 202, 0.17);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    padding: 24px 0;
+    font-size: 14px;
+    color: #d9e5f7;
+    line-height: 1.5;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::marker {
+    content: '';
+  }
+  .faq-item summary:focus-visible {
+    outline: 2px solid #46c8ff;
+    outline-offset: 5px;
+    border-radius: 2px;
+  }
+  .faq-number {
+    font-size: 10px;
+    color: #8ba3c6;
+    font-family: var(--font-mono, monospace);
+  }
+  .faq-toggle {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: #90a7c9;
+    transition:
+      transform 0.25s ease,
+      color 0.25s ease;
+  }
+  .faq-item[open] .faq-toggle {
+    transform: rotate(45deg);
+    color: #46c8ff;
+  }
+  .faq-item[open] summary {
+    color: #fff;
+  }
+  .faq-answer {
+    padding: 0 25px 25px 33px;
+  }
+  .faq-answer p {
+    color: #94a8ca;
+    font-size: 13px;
+    line-height: 1.85;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .faq-grid {
+      gap: 45px;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+    .join-step {
+      padding-right: 21px;
+    }
+    .join-step + .join-step {
+      padding-left: 21px;
+    }
+  }
+  @media (max-width: 680px) {
+    .community-section {
+      padding-top: 76px;
+    }
+    .join-intro {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+      margin-bottom: 35px;
+    }
+    .join-intro > p {
+      font-size: 14px;
+    }
+    .join-steps {
+      grid-template-columns: 1fr;
+      gap: 27px;
+      margin-bottom: 59px;
+    }
+    .join-step,
+    .join-step + .join-step {
+      padding: 20px 0 0;
+    }
+    .join-step + .join-step::before {
+      display: none;
+    }
+    .step-top {
+      margin-bottom: 12px;
+    }
+    .join-step h3 {
+      font-size: 20px;
+    }
+    .join-step p {
+      max-width: 100%;
+      font-size: 13px;
+    }
+    .join-cta {
+      border-radius: 18px;
+    }
+    .cta-content {
+      padding: 53px 17px 46px;
+    }
+    .join-cta h2 {
+      font-size: clamp(27px, 6.5vw, 39px);
+      line-height: 1.2;
+    }
+    .join-cta p {
+      font-size: 13px;
+    }
+    .community-badge {
+      font-size: 10px;
+    }
+    .join-note {
+      font-size: 9px;
+    }
+    .faq-section {
+      padding: 78px 0 70px;
+    }
+    .faq-grid {
+      grid-template-columns: 1fr;
+      gap: 37px;
+    }
+    .faq-intro > p {
+      margin: 18px 0;
+    }
+    .desktop-break {
+      display: none;
+    }
+    .faq-item summary {
+      font-size: 13px;
+      padding: 23px 0;
+      gap: 14px;
+    }
+    .faq-answer {
+      padding-left: 28px;
+      padding-right: 17px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-toggle,
+    .faq-link {
+      transition: none;
+    }
+  }
+</style>
