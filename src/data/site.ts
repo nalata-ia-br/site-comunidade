@@ -1,4 +1,5 @@
 export const WHATSAPP_URL = 'https://chat.whatsapp.com/KivInKUIxei22zQE7Ouwzv';
+export const LEARN_URL = 'https://nalata-ia-br.github.io/apredenr-ia-na-lata/';
 export const SITE_URL = 'https://nalata.ia.br';
 export const SITE_TITLE =
   'IA na lata — Comunidade de IA open source e on-premise';

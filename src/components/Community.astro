@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { WHATSAPP_URL } from '../data/site';
+import { LEARN_URL, WHATSAPP_URL } from '../data/site';
 
 const steps = [
   {
@@ -106,16 +106,26 @@ const questions = [
           <br />
           Entra, se apresenta e manda a real.
         </p>
-        <a
-          class="button button-primary join-button"
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="whatsapp" size={19} />
-          Entrar no WhatsApp
-          <Icon name="arrow-up-right" size={18} />
-        </a>
+        <div class="join-actions">
+          <a
+            class="button button-primary join-button"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="whatsapp" size={19} />
+            Entrar no WhatsApp
+            <Icon name="arrow-up-right" size={18} />
+          </a>
+          <a
+            class="button button-secondary join-button"
+            href={LEARN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Aprender IA <Icon name="arrow-up-right" size={18} />
+          </a>
+        </div>
         <span class="join-note">
           <Icon name="check" size={13} /> Entrada com aprovação de admin ·
           Comunidade gratuita
@@ -311,8 +321,16 @@ const questions = [
     color: #94a8ca;
     margin: 0 0 28px;
   }
+  .join-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
   .join-button {
     display: inline-flex;
+    min-height: 46px;
     gap: 10px;
   }
   .join-note {
@@ -521,6 +539,12 @@ const questions = [
     }
     .join-note {
       font-size: 9px;
+    }
+    .join-actions {
+      flex-direction: column;
+    }
+    .join-button {
+      width: min(100%, 280px);
     }
     .faq-section {
       padding: 78px 0 70px;

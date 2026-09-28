@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
-import { WHATSAPP_URL } from '../data/site';
+import { LEARN_URL, WHATSAPP_URL } from '../data/site';
 ---
 
 <footer class="site-footer">
@@ -23,6 +23,9 @@ import { WHATSAPP_URL } from '../data/site';
       <nav class="footer-navigation" aria-label="Navegação do rodapé">
         <a href="#sobre">A comunidade</a>
         <a href="#stack">Nossa stack</a>
+        <a href={LEARN_URL} target="_blank" rel="noopener noreferrer">
+          Aprender IA <Icon name="arrow-up-right" size={15} />
+        </a>
         <a href="#perguntas">Perguntas frequentes</a>
         <a
           class="footer-whatsapp"

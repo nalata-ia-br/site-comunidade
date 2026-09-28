@@ -1,7 +1,7 @@
 import { animate, inView, scroll, stagger } from 'motion';
 import { isMotionPaused } from './motion-state';
 
-const desktop = window.matchMedia('(min-width: 761px)');
+const desktop = window.matchMedia('(min-width: 901px)');
 const menuButton = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const mobileNav = document.querySelector<HTMLElement>('#mobile-nav');
 
@@ -21,9 +21,9 @@ menuButton?.addEventListener('click', () => {
 mobileNav?.querySelectorAll('a').forEach((link) =>
   link.addEventListener('click', () => {
     closeMenu();
-    const target = document.querySelector<HTMLElement>(
-      link.getAttribute('href') || '',
-    );
+    const href = link.getAttribute('href');
+    if (!href?.startsWith('#')) return;
+    const target = document.getElementById(href.slice(1));
     if (target) {
       target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });

@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
+import { LEARN_URL } from '../data/site';
 ---
 
 <a class="skip-link" href="#conteudo">
@@ -18,6 +19,9 @@ import Icon from './Icon.astro';
       <a href="#sobre">A comunidade</a>
       <a href="#pilares">Por que na lata?</a>
       <a href="#stack">Nossa stack</a>
+      <a href={LEARN_URL} target="_blank" rel="noopener noreferrer">
+        Aprender IA
+      </a>
     </nav>
     <a class="nav-join" href="#participar">
       Fazer parte <Icon name="arrow-up-right" size={16} />
@@ -46,6 +50,9 @@ import Icon from './Icon.astro';
     </a>
     <a href="#stack">
       Nossa stack <Icon name="arrow-up-right" />
+    </a>
+    <a href={LEARN_URL} target="_blank" rel="noopener noreferrer">
+      Aprender IA <Icon name="arrow-up-right" />
     </a>
     <a href="#participar">
       Fazer parte <Icon name="arrow-up-right" />
@@ -190,7 +197,7 @@ import Icon from './Icon.astro';
   .mobile-nav[hidden] {
     display: none;
   }
-  @media (max-width: 760px) {
+  @media (max-width: 900px) {
     .nav-inner {
       height: 70px;
       gap: 12px;
@@ -220,7 +227,7 @@ import Icon from './Icon.astro';
       padding: 2px 3px;
     }
   }
-  @media (min-width: 761px) {
+  @media (min-width: 901px) {
     .mobile-nav {
       display: none;
     }
